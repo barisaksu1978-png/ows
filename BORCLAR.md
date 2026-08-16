@@ -24,7 +24,7 @@ Kayıt tarihi: 2026-08-16 (Aşama 1 kapanış defteri).
 | Kimlik | OWS-BORC-001 |
 | Tür | Çeviri |
 | Durum | AÇIK |
-| Öncelik | YAYIN ÖNCESİ |
+| Öncelik | YAYIN SONRASI / PLANLI |
 | Kayıt tarihi | 2026-08-16 |
 | Onay sahibi | Barış Mustafa Aksu |
 | Son inceleme | 2026-08-16 |
@@ -38,7 +38,7 @@ Kayıt tarihi: 2026-08-16 (Aşama 1 kapanış defteri).
 
 **Erteleme nedeni.** Beş dilde çalışma yükü ve yorgunluk nedeniyle bilinçli erteleme.
 
-**Mevcut geçici durum.** UK/EL rotaları üretilmiyor; TR gövdesi yanlış dil etiketiyle sunulmuyor. Dört rota 404. Site içi bağlantı sayısı sıfır. Hreflang, sitemap ve dil menüsü yalnız TR/EN/RU.
+**Mevcut geçici durum.** UK/EL rotaları üretilmiyor; TR gövdesi yanlış dil etiketiyle sunulmuyor. Dört rota 404. Site içi bağlantı sayısı sıfır. Hreflang, sitemap ve dil menüsü yalnız TR/EN/RU. Bu borç tek başına deploy engeli değildir; eksik UK/EL içerikleri güvenli biçimde yayımdan çıkarılmıştır ve çeviriler sonraki aşamada tamamlanacaktır.
 
 **Kapanma koşulları.**
 
