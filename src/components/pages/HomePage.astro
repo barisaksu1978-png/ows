@@ -2,196 +2,41 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { formatDocumentTitle, getUi, type Locale } from '../../i18n';
 import { getRelativeLocaleUrl } from 'astro:i18n';
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
-import {
-  listDossierGroups,
-  getDossierEntry,
-  pickLocalized,
-  DOSSIER_CATEGORIES,
-} from '../../lib/dossiers';
-
-const dossierImages = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/dossiers/*.{jpg,jpeg,png,webp,gif,tif,tiff}',
-);
-
-/** Ana sayfa matrisi: ABD → Sovyet → Ortodoks */
-const MANSET_ORDER = [
-  'arayuz-analizleri-reagan',
-  'abd-dis-politikasi',
-  'arayuz-analizleri-kudus',
-  'arayuz-analizleri-suveys',
-  'protokol-17447-traktor-mu-tank-mi',
-  'sovyet-amerikan-transfer',
-  'nevskiy-danylo',
-  'yaroslav-relics',
-  'orthodox-axis',
-] as const;
-
-/** Çarpıcı kapaklar (manset özel) */
-const MANSET_HERO: Record<string, string> = {
-  /* 1 — NAE / Evanjelik “Evil Empire” konuşması */
-  'arayuz-analizleri-reagan': 'manset-reagan-evil-empire.webp',
-  /* 2 — Pearl Harbor, gemilerin vurulduğu sahne */
-  'abd-dis-politikasi': 'manset-abd-pearl-harbor.webp',
-  'arayuz-analizleri-kudus': 'manset-kudus-wh-2017.webp',
-  'arayuz-analizleri-suveys': 'manset-suveys-tanks.webp',
-  'protokol-17447-traktor-mu-tank-mi': 'tank_bezbozhnik_stz_1930.jpg',
-  'sovyet-amerikan-transfer': 'tank_stz_workshop_1930.jpg',
-  'nevskiy-danylo': 'nevsky_facial_chronicle_battle_ice_085.jpg',
-  /* 8 — dikey Bilibin: üst kırpım */
-  'yaroslav-relics': 'manset-yaroslav-top.jpg',
-  'orthodox-axis': 'orthodox_constantinople_moscow_patriarchate_document.jpg',
-};
-
-/** object-position override (dikey görseller) */
-const MANSET_FOCUS: Record<string, string> = {
-  'nevskiy-danylo': 'center top',
-  'yaroslav-relics': 'center top',
-  'arayuz-analizleri-reagan': 'center 28%',
-};
 
 const locale = (Astro.currentLocale ?? 'tr') as Locale;
 const t = getUi(locale);
 const notItems = [1, 2, 3, 4, 5, 6] as const;
 const previews = [
-  { title: 'home.preview.method.title', body: 'home.preview.method.body', path: '/method/', tone: 'method' },
-  { title: 'home.preview.dossiers.title', body: 'home.preview.dossiers.body', path: '/dossiers/', tone: 'dossiers' },
-  { title: 'home.preview.atlas.title', body: 'home.preview.atlas.body', path: '/atlas/', tone: 'atlas' },
-  { title: 'home.preview.human_ai.title', body: 'home.preview.human_ai.body', path: '/human-ai/', tone: 'human-ai' },
+  { title: 'home.preview.method.title', body: 'home.preview.method.body', path: '/method/' },
+  { title: 'home.preview.dossiers.title', body: 'home.preview.dossiers.body', path: '/dossiers/' },
+  { title: 'home.preview.atlas.title', body: 'home.preview.atlas.body', path: '/atlas/' },
+  { title: 'home.preview.human_ai.title', body: 'home.preview.human_ai.body', path: '/human-ai/' },
 ] as const;
 
-const slugToCategory = new Map<string, string>();
-for (const cat of DOSSIER_CATEGORIES) {
-  for (const slug of cat.slugs) slugToCategory.set(slug, cat.labelKey);
-}
-
-const groups = await listDossierGroups();
-const byBase = new Map(groups.map((g) => [g.baseSlug, g]));
-
-type Slide = {
-  title: string;
-  code: string;
-  categoryLabel: string;
-  href: string;
-  cover: ImageMetadata | null;
-  focus: string;
-};
-
-const slides: Slide[] = [];
-
-for (const baseSlug of MANSET_ORDER) {
-  const group = byBase.get(baseSlug);
-  if (!group) continue;
-  const entry = await getDossierEntry(group.cardSlug, locale);
-  if (!entry) continue;
-  const { data } = entry;
-  const categoryId =
-    slugToCategory.get(group.baseSlug) ??
-    slugToCategory.get(group.cardSlug) ??
-    'dossiers.category.other';
-
-  const heroName = MANSET_HERO[baseSlug] ?? data.image;
-  let cover: ImageMetadata | null = null;
-  if (heroName) {
-    const match = dossierImages[`/src/assets/dossiers/${heroName}`];
-    if (match) cover = (await match()).default;
-  }
-
-  slides.push({
-    title: pickLocalized(data.title, locale),
-    code: data.code,
-    categoryLabel: t[categoryId as keyof typeof t],
-    href: getRelativeLocaleUrl(locale, `/dossiers/${group.cardSlug}/`),
-    cover,
-    focus: MANSET_FOCUS[baseSlug] ?? 'center center',
-  });
-}
+// Restored from the live Open War Studies homepage on 2026-08-16; visible text preserved unchanged.
 ---
 
-<BaseLayout title={formatDocumentTitle(t['home.title'], t['brand.name'])}>
-  <article id="route-root" class="page page--home">
-    <h1 class="sr-only">{t['home.title']}</h1>
-    <section
-      class="home-manset home-manset--slider home-manset--dossiers"
-      aria-roledescription="carousel"
-      aria-label={t['nav.dossiers']}
-    >
-      <div class="home-manset__slides">
-        {
-          slides.map((slide, i) => (
-            <a
-              class:list={['home-manset__slide', 'home-manset__slide--dossier', { 'is-active': i === 0 }]}
-              href={slide.href}
-              data-slide={i}
-              role="group"
-              aria-roledescription="slide"
-              aria-label={`${i + 1} / ${slides.length}: ${slide.title}`}
-              hidden={i !== 0}
-            >
-              <div class="home-manset__bg" aria-hidden="true">
-                {slide.cover ? (
-                  <Image
-                    src={slide.cover}
-                    alt=""
-                    class="home-manset__bg-img"
-                    widths={[900, 1400, 1800]}
-                    sizes="100vw"
-                    style={`object-position: ${slide.focus}`}
-                  />
-                ) : (
-                  <div class="home-manset__bg-fallback" />
-                )}
-              </div>
-              <div class="home-manset__overlay">
-                <p class="home-manset__kicker">
-                  <span>{slide.categoryLabel}</span>
-                  <span aria-hidden="true"> · </span>
-                  <span>{slide.code}</span>
-                </p>
-                <h2 class="home-manset__headline" id={i === 0 ? 'home-manset-title' : undefined}>
-                  {slide.title}
-                </h2>
-              </div>
-            </a>
-          ))
-        }
-      </div>
-      <div class="manset-matrix" role="tablist" aria-label={t['nav.dossiers']}>
-        {
-          slides.map((_, i) => (
-            <button
-              type="button"
-              class:list={['manset-matrix__cell', { 'is-active': i === 0 }]}
-              role="tab"
-              aria-selected={i === 0 ? 'true' : 'false'}
-              data-matrix-index={i}
-            >
-              {i + 1}
-            </button>
-          ))
-        }
-      </div>
+<BaseLayout title={formatDocumentTitle(t['home.title'], t['brand.name'])} withIntro>
+  <article id="route-root" class="page">
+    <p class="page-label">{t['home.label']}</p>
+    <h1 tabindex="-1">{t['home.title']}</h1>
+    <blockquote class="page-quote">{t['home.claim']}</blockquote>
+    <p class="page-lead">{t['home.lead']}</p>
+    <section class="card card-full">
+      <h2>{t['home.not_site.title']}</h2>
+      <ul class="card-list">
+        {notItems.map((n) => <li>{t[`home.not_site.item_${n}`]}</li>)}
+      </ul>
     </section>
-
-    <div class="card-grid home-preview-grid">
+    <div class="card-grid">
       {
-        previews.map(({ title, body, path, tone }) => (
-          <a class={`card card-link home-preview-card home-preview-card--${tone}`} href={getRelativeLocaleUrl(locale, path)}>
+        previews.map(({ title, body, path }) => (
+          <a class="card" href={getRelativeLocaleUrl(locale, path)}>
             <h3>{t[title]}</h3>
             <p>{t[body]}</p>
           </a>
         ))
       }
     </div>
-
-    <section class="card card-full home-not-site">
-      <h2>{t['home.not_site.title']}</h2>
-      <ul class="card-list">
-        {notItems.map((n) => <li>{t[`home.not_site.item_${n}`]}</li>)}
-      </ul>
-    </section>
-
-    <script src="./home-manset.ts"></script>
   </article>
 </BaseLayout>
