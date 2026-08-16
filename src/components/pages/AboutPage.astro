@@ -1,12 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { formatDocumentTitle, getUi } from '../../i18n';
+import { formatDocumentTitle, getUi, stripHubIndexPrefix } from '../../i18n';
 
 const t = getUi(Astro.currentLocale ?? 'tr');
 const cards = ['mission', 'identity', 'standard'] as const;
 ---
 
-<BaseLayout title={formatDocumentTitle(t['about.label'], t['brand.name'])} description={t['about.lead']}>
+<BaseLayout title={formatDocumentTitle(stripHubIndexPrefix(t['about.label']), t['brand.name'])} description={t['about.lead']}>
   <article id="route-root" class="page">
     <p class="page-label">{t['about.label']}</p>
     <h1>{t['about.title']}</h1>

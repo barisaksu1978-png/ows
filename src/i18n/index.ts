@@ -42,3 +42,8 @@ export function formatDocumentTitle(
   if (name.endsWith(` · ${b}`)) return name;
   return `${name} · ${b}`;
 }
+
+/** Drop a leading hub index (`06 · `) from a nav label. For document titles only. */
+export function stripHubIndexPrefix(label: string): string {
+  return label.replace(/^\d+\s*·\s*/, '').trim();
+}

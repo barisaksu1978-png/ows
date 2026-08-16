@@ -20,23 +20,28 @@ export async function listDossierSlugs(): Promise<string[]> {
   return [...slugs].sort();
 }
 
+let dossierIdIndex: Set<string> | undefined;
+
+async function knownDossierIds(): Promise<Set<string>> {
+  if (!dossierIdIndex) {
+    const entries = await getCollection('dossiers');
+    dossierIdIndex = new Set(entries.map((e) => e.id));
+  }
+  return dossierIdIndex;
+}
+
 export async function listDossierSlugsForLocale(locale: string): Promise<string[]> {
-  const entries = await getCollection('dossiers');
-  const slugs = new Set(
-    entries
-      .filter((e) => e.id.endsWith(`/${locale}`))
-      .map((e) => parseDossierSlug(e.id)),
-  );
+  const ids = await knownDossierIds();
+  const slugs = new Set<string>();
+  for (const id of ids) {
+    if (id.endsWith(`/${locale}`)) slugs.add(parseDossierSlug(id));
+  }
   return [...slugs].sort();
 }
 
 export async function listDossierLocales(slug: string): Promise<Locale[]> {
-  const found: Locale[] = [];
-  for (const loc of LOCALES) {
-    const entry = await getEntry('dossiers', dossierEntryId(slug, loc));
-    if (entry) found.push(loc);
-  }
-  return found;
+  const ids = await knownDossierIds();
+  return LOCALES.filter((loc) => ids.has(dossierEntryId(slug, loc)));
 }
 
 /** Static paths for one locale folder: only slugs that have that locale file. */
@@ -65,7 +70,10 @@ export async function getDossierEntry(
   slug: string,
   locale: string,
 ): Promise<DossierEntry | null> {
-  const entry = await getEntry('dossiers', dossierEntryId(slug, locale));
+  const id = dossierEntryId(slug, locale);
+  const ids = await knownDossierIds();
+  if (!ids.has(id)) return null;
+  const entry = await getEntry('dossiers', id);
   return entry ?? null;
 }
 

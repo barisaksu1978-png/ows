@@ -20,23 +20,28 @@ export async function listAtlasSlugs(): Promise<string[]> {
   return [...slugs].sort();
 }
 
+let atlasIdIndex: Set<string> | undefined;
+
+async function knownAtlasIds(): Promise<Set<string>> {
+  if (!atlasIdIndex) {
+    const entries = await getCollection('atlas');
+    atlasIdIndex = new Set(entries.map((e) => e.id));
+  }
+  return atlasIdIndex;
+}
+
 export async function listAtlasSlugsForLocale(locale: string): Promise<string[]> {
-  const entries = await getCollection('atlas');
-  const slugs = new Set(
-    entries
-      .filter((e) => e.id.endsWith(`/${locale}`))
-      .map((e) => parseAtlasSlug(e.id)),
-  );
+  const ids = await knownAtlasIds();
+  const slugs = new Set<string>();
+  for (const id of ids) {
+    if (id.endsWith(`/${locale}`)) slugs.add(parseAtlasSlug(id));
+  }
   return [...slugs].sort();
 }
 
 export async function listAtlasLocales(slug: string): Promise<Locale[]> {
-  const found: Locale[] = [];
-  for (const loc of LOCALES) {
-    const entry = await getEntry('atlas', atlasEntryId(slug, loc));
-    if (entry) found.push(loc);
-  }
-  return found;
+  const ids = await knownAtlasIds();
+  return LOCALES.filter((loc) => ids.has(atlasEntryId(slug, loc)));
 }
 
 /** Static paths for one locale folder: only slugs that have that locale file. */
@@ -51,7 +56,10 @@ export async function getAtlasEntry(
   slug: string,
   locale: string,
 ): Promise<AtlasEntry | null> {
-  const entry = await getEntry('atlas', atlasEntryId(slug, locale));
+  const id = atlasEntryId(slug, locale);
+  const ids = await knownAtlasIds();
+  if (!ids.has(id)) return null;
+  const entry = await getEntry('atlas', id);
   return entry ?? null;
 }
 

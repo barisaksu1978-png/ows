@@ -82,7 +82,7 @@ const canonicalHref = absolutePageUrl(pathname, siteOrigin);
   </head>
   <body class="app-ready shell-mode">
     <div class="app-shell">
-      <Header t={t} locale={locale} />
+      <Header t={t} locale={locale} availableLocales={hreflangLocales} />
       <main class="app-main">
         <slot />
       </main>
