@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getUi, type Locale } from '../../i18n';
+import { formatDocumentTitle, getUi, type Locale } from '../../i18n';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { render } from 'astro:content';
 import { Image } from 'astro:assets';
@@ -55,7 +55,7 @@ const updated = data.updated.toLocaleDateString(
 );
 ---
 
-<BaseLayout title={`${title} · ${t['brand.name']}`} description={summary} hreflangLocales={hreflangLocales}>
+<BaseLayout title={formatDocumentTitle(title, t['brand.name'])} description={summary} hreflangLocales={hreflangLocales}>
   <article id="route-root" class="page dossier-detail dossier-detail--portal">
     <p class="page-label">{t['dossiers.label']}</p>
 
