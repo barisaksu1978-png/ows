@@ -2,6 +2,24 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import type { Locale } from './index';
 
 const LOCALE_PREFIX = /^\/(en|ru|uk|el)(?=\/|$)/;
+export const SITE_ORIGIN = 'https://openwarstudies.org';
+
+/** Normalize a pathname to the site trailingSlash: 'always' policy. */
+export function withTrailingSlash(pathname: string): string {
+  let path = pathname.replace(/\/index\.html$/i, '');
+  if (!path.startsWith('/')) path = `/${path}`;
+  if (!path.endsWith('/')) path = `${path}/`;
+  return path;
+}
+
+/** Absolute HTTPS apex URL for a site pathname. */
+export function absolutePageUrl(
+  pathname: string,
+  siteOrigin: string = SITE_ORIGIN,
+): string {
+  const origin = siteOrigin.replace(/\/$/, '');
+  return `${origin}${withTrailingSlash(pathname)}`;
+}
 
 /** True for locale home URLs: /, /en, /ru, /uk, /el */
 export function isHomePath(pathname: string): boolean {
