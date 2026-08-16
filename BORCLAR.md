@@ -133,34 +133,34 @@ Kayıt tarihi: 2026-08-16 (Aşama 1 kapanış defteri).
 |---|---|
 | Kimlik | OWS-BORC-004 |
 | Tür | Karar/yayın |
-| Durum | BLOKE |
+| Durum | DEVAM EDİYOR |
 | Öncelik | DEPLOY BLOCKER |
 | Kayıt tarihi | 2026-08-16 |
 | Onay sahibi | Barış Mustafa Aksu |
 | Son inceleme | 2026-08-16 |
 
-**Ertelenen iş.** Canlı görünüm (intro) ile güncel kaynak görünümü (manset/slider) arasında açık yayın kararı; Netlify deploy kaynağı ve yönteminin panelden doğrulanması.
+**Ertelenen iş.** Kaynakta görsel karar intro + eşik olarak alındı; Netlify yayın zincirinin panelden doğrulanması, deploy ve canlı kontrol hâlâ açık.
 
-**Erteleme nedeni.** Aşama 1 teknik temel paketinde ana sayfa tasarımı ve deploy kararı kapsam dışıdır. “Manset görünümünden 30 Temmuz’da vazgeçildi” iddiası doğrulanmış değildir; bu deftere gerçek olarak yazılmaz.
+**Erteleme nedeni.** Aşama 1 teknik temel paketinde ana sayfa tasarımı ve deploy kararı kapsam dışıdır. Aşama 1.5 kaynağı intro + eşik görünümüne döndürdü; kapanma hâlâ yayın zincirine bağlıdır.
 
 **Mevcut geçici durum.**
 
-- Canlı site, eski `ows-dist-akademik` intro görünümünü sunmaktadır (gözlemlenen HTML/CSS eşleşmesi; tüm ağacın kriptografik kanıtı değildir).
-- Güncel `ows` kaynağı manset/slider görünümü içerir.
+- Görsel karar: intro + eşik. Manset/slider ana sayfadan çıkarıldı; bileşen ve varlıklar silinmedi ve bu turda başka bir rotaya taşınmadı.
+- Canlı site hâlâ önceki yayın paketini sunuyor olabilir; kaynak ile canlı eşleşmesi deploy sonrası kontrol edilecektir.
 - Netlify deploy kaynağı ve yöntemi panelden kesinleştirilmemiştir.
 - Bu dalda remote, push ve deploy yoktur.
 
 **Kapanma koşulları.**
 
 - Netlify panelindeki deploy kaynağının doğrulanması
-- Canlı, güncel kaynak ve varsa WOA kopyasının görsel karşılaştırması
-- Intro veya manset için açık Barış Mustafa Aksu kararı
+- Deploy
+- Canlı kontrol (intro + eşik görünümünün yayında olduğu)
 - Geri dönüş planı olan yazılı deploy yöntemi
 
 **İlgili commit / kanıt.**
 
-- Depoda bu kararı veren bir commit yoktur.
-- 2026-08-16 canlı–kaynak karşılaştırması: canlı intro + `BaseLayout.dDg_5u_e.css`; kaynak manset + farklı CSS özeti. Aşama 1 commitleri ana sayfa tasarımına karar vermedi.
+- Aşama 1.5 dalı `seo/phase-1-5-intro`: kaynakta intro + eşik restorasyonu.
+- 2026-08-16 canlı HTML (TR, EN, RU, UK, EL) eşik metinlerinin `ui.json` anahtarlarıyla birebir eşleştiği doğrulandı; görünür metin değiştirilmedi.
 
 ---
 
