@@ -22,3 +22,24 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Environment and secrets
+.env.*
+!.env.example
+
+# Local runtime and generated output
+.tools/
+
+# Caches and temporary files
+.cache/
+__pycache__/
+*.py[cod]
+.tmp/
+.tmp-orthodox/
+*.tmp
+*.temp
+*.log
+
+# Operating-system files
+Thumbs.db
+
