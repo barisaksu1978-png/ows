@@ -1,0 +1,417 @@
+/* ===== SITE SHELL — header, nav, main sections, cards, footer ===== */
+/* Intro/perde stilleri intro-*.css dosyalarındadır; buraya taşınmaz. */
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html,body{
+  height:100%;
+  overflow:hidden;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--display);
+}
+
+body{
+  background-image:
+    linear-gradient(rgba(91,145,180,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(91,145,180,.035) 1px,transparent 1px),
+    radial-gradient(ellipse 70% 60% at 50% 40%,rgba(200,74,48,.06),transparent 70%);
+  background-size:54px 54px,54px 54px,100% 100%;
+}
+
+/* Perde intro harici ana içerikte görünmesin */
+body.shell-mode #intro-curtain{
+  display:none!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+
+.shell-app{
+  position:fixed;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  z-index:2;
+}
+
+/* ----- header / footer — yalnızca intro sonrası ----- */
+.shell-header,
+.shell-footer{
+  display:none;
+}
+
+body.shell-mode .shell-header{
+  display:flex;
+}
+
+body.shell-mode .shell-footer{
+  display:flex;
+}
+
+/* ----- header ----- */
+.shell-header{
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem 1.5rem;
+  padding:.85rem 2rem;
+  border-bottom:1px solid var(--line);
+  flex-shrink:0;
+  background:rgba(4,6,10,.92);
+  backdrop-filter:blur(6px);
+  flex-wrap:wrap;
+}
+
+.shell-brand{
+  display:flex;
+  align-items:center;
+  gap:.85rem;
+  min-width:0;
+}
+
+.shell-seal,
+.shell-logo{
+  width:40px;
+  height:40px;
+  max-width:40px;
+  max-height:40px;
+  object-fit:contain;
+  flex-shrink:0;
+}
+
+.shell-brand img{
+  width:40px;
+  height:40px;
+  max-width:40px;
+  max-height:40px;
+  object-fit:contain;
+  flex-shrink:0;
+}
+
+.shell-brand-text{
+  min-width:0;
+}
+
+.shell-brand-text .site-name{
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ink);
+}
+
+.shell-nav{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:flex-end;
+  gap:0;
+}
+
+.shell-nav .navitem{
+  padding:.45rem .75rem;
+  cursor:pointer;
+  border-bottom:2px solid transparent;
+  transition:.25s;
+}
+
+.shell-nav .navitem .nt{
+  font-size:.82rem;
+  color:var(--dim);
+  transition:.25s;
+  white-space:nowrap;
+}
+
+.shell-nav .navitem:hover .nt{color:var(--ink)}
+.shell-nav .navitem.active{border-bottom-color:var(--accent)}
+.shell-nav .navitem.active .nt{color:var(--ink)}
+
+.shell-langs{
+  display:flex;
+  align-items:center;
+  gap:.25rem;
+  flex-shrink:0;
+}
+
+.shell-langs .lang-btn{
+  background:none;
+  border:1px solid var(--line);
+  color:var(--faint2);
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:.08em;
+  padding:.28rem .45rem;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.shell-langs .lang-btn.on{
+  color:var(--gold);
+  border-color:var(--gold);
+}
+
+.shell-langs .lang-btn:hover:not(.on){
+  color:var(--ink);
+  border-color:var(--faint2);
+}
+
+.shell-tag-desc{
+  margin-top:1rem;
+  display:grid;
+  gap:.65rem;
+}
+
+.shell-tag-desc dt{
+  font-family:var(--mono);
+  font-size:.58rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent2);
+}
+
+.shell-tag-desc dd{
+  font-size:.92rem;
+  color:var(--dim);
+  line-height:1.6;
+  margin-left:0;
+}
+
+.intro-map-caption,
+.intro-map-note{
+  margin:0;
+}
+
+.intro-map-note{
+  margin-top:.45rem;
+  color:var(--dim);
+}
+
+/* ----- main / stage ----- */
+.shell-main{
+  flex:1;
+  min-height:0;
+  position:relative;
+  background:var(--bg);
+  display:flex;
+  flex-direction:column;
+}
+
+.shell-main .stage{
+  flex:1;
+  position:relative;
+  overflow:hidden;
+  min-height:0;
+}
+
+/* intro dışı ekranlar: koyu zemin, scroll içerik */
+.shell-main .screen:not(#intro){
+  padding:2.5rem 5vw 3rem;
+  background:var(--bg);
+}
+
+body.shell-mode .shell-main .screen:not(#intro).show{
+  overflow-y:auto;
+}
+
+/* #intro CTA — harita/coords katmanının üstünde, sol alt blokta */
+#intro.show .intro-content{
+  z-index:4;
+  pointer-events:auto;
+}
+
+#intro.show .enter{
+  position:relative;
+  z-index:5;
+  display:inline-flex;
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+
+.shell-page-label{
+  font-family:var(--mono);
+  font-size:.66rem;
+  letter-spacing:.3em;
+  color:var(--accent2);
+  text-transform:uppercase;
+  margin-bottom:1.2rem;
+}
+
+.shell-page-label em{
+  font-style:normal;
+  color:var(--gold);
+}
+
+.shell-page h1{
+  font-weight:300;
+  font-size:clamp(2rem,4vw,3.2rem);
+  line-height:1.06;
+  letter-spacing:-.015em;
+  margin-bottom:1.5rem;
+  max-width:18ch;
+}
+
+.shell-page h1 em{
+  font-style:italic;
+  color:var(--accent);
+}
+
+.shell-lead{
+  font-size:1.15rem;
+  color:var(--ink);
+  max-width:680px;
+  line-height:1.5;
+  font-weight:300;
+  margin-bottom:2rem;
+}
+
+.shell-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.1rem;
+  margin-top:1.5rem;
+}
+
+.shell-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  padding:1.35rem 1.4rem;
+}
+
+.shell-card h2{
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--accent2);
+  margin-bottom:.75rem;
+}
+
+.shell-card p{
+  font-size:.98rem;
+  color:var(--dim);
+  line-height:1.65;
+}
+
+.shell-card p + p{margin-top:.65rem}
+
+.shell-card-full{grid-column:1/-1}
+
+.shell-list{
+  list-style:none;
+  display:grid;
+  gap:.55rem;
+}
+
+.shell-list li{
+  font-size:.98rem;
+  color:var(--dim);
+  line-height:1.55;
+  padding-left:1rem;
+  border-left:2px solid var(--line);
+}
+
+.shell-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.45rem;
+  margin-top:.35rem;
+}
+
+.shell-tag{
+  font-family:var(--mono);
+  font-size:.58rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent2);
+  border:1px solid var(--line);
+  padding:.3rem .55rem;
+  background:rgba(17,24,36,.6);
+}
+
+.shell-quote{
+  border-left:2px solid var(--accent);
+  background:var(--card);
+  padding:1.25rem 1.5rem;
+  margin:1.5rem 0 2rem;
+  font-style:italic;
+  font-size:1.15rem;
+  color:var(--ink);
+  max-width:680px;
+}
+
+.shell-section-placeholder{
+  margin-top:2.5rem;
+  padding-top:1.5rem;
+  border-top:1px solid var(--line);
+}
+
+.shell-section-placeholder h2{
+  font-weight:300;
+  font-size:1.35rem;
+  margin-bottom:.75rem;
+  color:var(--ink);
+}
+
+.shell-section-placeholder p{
+  color:var(--dim);
+  max-width:680px;
+  line-height:1.65;
+}
+
+/* ----- footer ----- */
+.shell-footer{
+  flex-shrink:0;
+  padding:.85rem 2rem;
+  border-top:1px solid var(--line);
+  background:rgba(4,6,10,.92);
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.shell-footer p{
+  font-family:var(--mono);
+  font-size:.6rem;
+  letter-spacing:.12em;
+  color:var(--faint2);
+  text-transform:uppercase;
+}
+
+@media(max-width:860px){
+  .shell-header{
+    flex-direction:column;
+    align-items:stretch;
+    padding:.85rem 1.1rem;
+    gap:.75rem;
+  }
+
+  .shell-nav{
+    justify-content:flex-start;
+    border-top:1px solid var(--line);
+    padding-top:.5rem;
+  }
+
+  .shell-nav .navitem{
+    padding:.5rem .55rem;
+  }
+
+  .shell-nav .navitem .nt{
+    font-size:.75rem;
+  }
+
+  .shell-langs{
+    justify-content:flex-start;
+    flex-wrap:wrap;
+  }
+
+  .shell-main .screen:not(#intro){
+    padding:2rem 1.3rem 2.5rem;
+  }
+
+  .shell-footer{
+    padding:.75rem 1.1rem;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}

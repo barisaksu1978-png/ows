@@ -1,0 +1,5 @@
+/* pages.css — route-specific spacing tweaks */
+.page-home .card-grid{margin-top:1rem}
+.page-dossiers .card{cursor:default}
+.page-dossier-detail .card-grid{margin-top:2rem}
+.page-atlas .card img{max-height:180px;object-fit:cover;border:1px solid var(--line);margin-bottom:.75rem;width:100%}

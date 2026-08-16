@@ -1,0 +1,20 @@
+{
+  "id": "archive",
+  "labelKey": "archive.label",
+  "titleKey": "archive.title",
+  "leadKey": "archive.lead",
+  "cards": [
+    {
+      "titleKey": "archive.card.shelves.title",
+      "bodyKey": "archive.card.shelves.body"
+    },
+    {
+      "titleKey": "archive.card.version_memory.title",
+      "bodyKey": "archive.card.version_memory.body"
+    },
+    {
+      "titleKey": "archive.card.quarantine.title",
+      "bodyKey": "archive.card.quarantine.body"
+    }
+  ]
+}

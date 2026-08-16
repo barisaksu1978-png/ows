@@ -1,0 +1,31 @@
+{
+  "id": "orthodox-axis",
+  "code": "OWS-2026-001",
+  "status": "active",
+  "version": "0.1",
+  "risk": "medium",
+  "evidence": "mixed",
+  "redTeam": "pending",
+  "updated": "2026-06-01",
+  "titleKey": "dossiers.card.ukraine.title",
+  "summaryKey": "dossiers.card.ukraine.body",
+  "tags": ["Orthodoxy", "Kyiv", "Moscow", "Tomos"],
+  "relatedMaps": ["eastern-question-1886"],
+  "sections": [
+    {
+      "type": "narrative",
+      "titleKey": "dossiers.lead",
+      "bodyKey": "dossiers.card.ukraine.body"
+    },
+    {
+      "type": "evidence",
+      "titleKey": "method.card.sources.title",
+      "items": []
+    },
+    {
+      "type": "red-team",
+      "titleKey": "method.card.red_team.title",
+      "items": []
+    }
+  ]
+}

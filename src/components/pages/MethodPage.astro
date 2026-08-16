@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getUi } from '../../i18n';
+
+const t = getUi(Astro.currentLocale ?? 'tr');
+const tags = ['fact', 'inference', 'hypothesis', 'speculation', 'unverified'] as const;
+---
+
+<BaseLayout>
+  <article id="route-root" class="page">
+    <p class="page-label">{t['method.label']}</p>
+    <h1>{t['method.title']}</h1>
+    <p class="page-lead">{t['method.lead']}</p>
+
+    <div class="card-grid">
+      <section class="card card-full">
+        <h2>{t['method.card.tags.title']}</h2>
+        <p>{t['method.card.tags.body']}</p>
+        <div class="tag-row">
+          {tags.map((tag) => <span class="tag">{t[`method.tag.${tag}`]}</span>)}
+        </div>
+        <dl class="tag-desc">
+          {
+            tags.flatMap((tag) => [
+              <dt>{t[`method.tag.${tag}`]}</dt>,
+              <dd>{t[`method.tag.${tag}.description`]}</dd>,
+            ])
+          }
+        </dl>
+      </section>
+
+      <section class="card">
+        <h2>{t['method.card.red_team.title']}</h2>
+        <p>{t['method.card.red_team.body']}</p>
+      </section>
+
+      <section class="card">
+        <h2>{t['method.card.sources.title']}</h2>
+        <p>{t['method.card.sources.body']}</p>
+      </section>
+
+      <section class="card">
+        <h2>{t['method.card.revision.title']}</h2>
+        <p>{t['method.card.revision.body']}</p>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

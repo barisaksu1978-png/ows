@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "id": "orthodox-axis",
+      "code": "OWS-2026-001",
+      "titleKey": "dossiers.card.ukraine.title",
+      "summaryKey": "dossiers.card.ukraine.body",
+      "status": "active",
+      "risk": "medium",
+      "contentFile": "content/dossiers/orthodox-axis.json"
+    },
+    {
+      "id": "teomonya",
+      "code": "OWS-2026-002",
+      "titleKey": "dossiers.card.teomonya.title",
+      "summaryKey": "dossiers.card.teomonya.body",
+      "status": "active",
+      "risk": "medium",
+      "contentFile": "content/dossiers/teomonya.json"
+    },
+    {
+      "id": "puritan-evangelical-machine",
+      "code": "OWS-2026-003",
+      "titleKey": "dossiers.card.puritan.title",
+      "summaryKey": "dossiers.card.puritan.body",
+      "status": "under_review",
+      "risk": "high",
+      "contentFile": "content/dossiers/puritan-evangelical-machine.json"
+    }
+  ]
+}

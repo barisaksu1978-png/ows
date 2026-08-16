@@ -1,0 +1,31 @@
+{
+  "id": "teomonya",
+  "code": "OWS-2026-002",
+  "status": "active",
+  "version": "0.1",
+  "risk": "medium",
+  "evidence": "secondary",
+  "redTeam": "pending",
+  "updated": "2026-06-01",
+  "titleKey": "dossiers.card.teomonya.title",
+  "summaryKey": "dossiers.card.teomonya.body",
+  "tags": ["Teomonya", "Geopolitics", "Theology"],
+  "relatedMaps": [],
+  "sections": [
+    {
+      "type": "narrative",
+      "titleKey": "dossiers.lead",
+      "bodyKey": "dossiers.card.teomonya.body"
+    },
+    {
+      "type": "evidence",
+      "titleKey": "method.card.sources.title",
+      "items": []
+    },
+    {
+      "type": "red-team",
+      "titleKey": "method.card.red_team.title",
+      "items": []
+    }
+  ]
+}

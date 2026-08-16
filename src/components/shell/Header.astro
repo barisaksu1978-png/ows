@@ -1,0 +1,93 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { UiStrings } from '../../i18n';
+import LangSwitcher from './LangSwitcher.astro';
+import ThemeSwitcher from './ThemeSwitcher.astro';
+import owsLogo from '../../assets/ows-owl.png';
+
+interface Props {
+  t: UiStrings;
+  locale: string;
+}
+
+const { t, locale } = Astro.props;
+
+const topBarItems = [
+  { key: 'nav.home' as const, path: '/', id: 'home' },
+  { key: 'nav.method' as const, path: '/method/', id: 'method' },
+  { key: 'nav.dossiers' as const, path: '/dossiers/', id: 'dossiers' },
+  { key: 'nav.atlas' as const, path: '/atlas/', id: 'atlas' },
+  { key: 'nav.about' as const, path: '/about/', id: 'about' },
+];
+
+const navItems = [
+  { key: 'nav.home' as const, path: '/', id: 'home' },
+  { key: 'nav.method' as const, path: '/method/', id: 'method' },
+  { key: 'nav.dossiers' as const, path: '/dossiers/', id: 'dossiers' },
+  { key: 'nav.atlas' as const, path: '/atlas/', id: 'atlas' },
+  { key: 'nav.archive' as const, path: '/archive/', id: 'archive' },
+  { key: 'nav.human_ai' as const, path: '/human-ai/', id: 'human-ai' },
+  { key: 'nav.about' as const, path: '/about/', id: 'about' },
+];
+
+function normalizePath(pathname: string): string {
+  const stripped = pathname.replace(/^\/(en|ru|uk|el)(?=\/|$)/, '') || '/';
+  return stripped.endsWith('/') && stripped !== '/' ? stripped : stripped.replace(/\/$/, '') || '/';
+}
+
+const current = normalizePath(Astro.url.pathname);
+
+function isActive(path: string): boolean {
+  const norm = path === '/' ? '/' : path.replace(/\/$/, '');
+  if (norm === '/') return current === '/';
+  return current === norm || current.startsWith(`${norm}/`);
+}
+---
+
+<header class="app-header site-chrome">
+  <div class="top-bar">
+    <nav class="top-bar-nav" aria-label={t['topbar.aria_label']}>
+      {
+        topBarItems.map(({ key, path, id }) => (
+          <a
+            class:list={['top-bar-link', { active: isActive(path) }]}
+            href={getRelativeLocaleUrl(locale, path)}
+            data-route={id}
+          >
+            {t[key]}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+
+  <div class="brand-bar">
+    <a class="app-brand" href={getRelativeLocaleUrl(locale, '/')}>
+      <img class="app-logo" src={owsLogo.src} alt="" aria-hidden="true" width="48" height="48" />
+      <span class="brand-text">
+        <span class="site-name">{t['brand.name']}</span>
+        <span class="brand-tagline">{t['brand.tagline']}</span>
+      </span>
+    </a>
+  </div>
+
+  <div class="nav-bar">
+    <nav class="app-nav" aria-label={t['nav.aria_label']}>
+      {
+        navItems.map(({ key, path, id }) => (
+          <a
+            class:list={['nav-link', { active: isActive(path) }]}
+            href={getRelativeLocaleUrl(locale, path)}
+            data-route={id}
+          >
+            <span class="nt">{t[key]}</span>
+          </a>
+        ))
+      }
+    </nav>
+    <div class="app-header-tools">
+      <ThemeSwitcher t={t} />
+      <LangSwitcher locale={locale} />
+    </div>
+  </div>
+</header>

@@ -1,0 +1,64 @@
+/* layout.css — app shell, header, footer, intro stage, route root */
+body.shell-mode #intro-curtain{display:none!important;visibility:hidden!important;pointer-events:none!important}
+
+#intro-stage{position:fixed;inset:0;z-index:2}
+#intro-stage.hidden{display:none!important}
+#intro-stage #intro{position:absolute;inset:0;padding:0}
+
+.app-shell{
+  position:fixed;inset:0;display:none;flex-direction:column;z-index:3;
+}
+body.shell-mode .app-shell{display:flex}
+
+.app-header{
+  display:none;align-items:center;justify-content:space-between;
+  gap:1rem 1.5rem;padding:.85rem 2rem;border-bottom:1px solid var(--line);
+  flex-shrink:0;background:rgba(4,6,10,.92);backdrop-filter:blur(6px);flex-wrap:wrap;
+}
+body.shell-mode .app-header{display:flex}
+
+.app-brand{display:flex;align-items:center;gap:.85rem;min-width:0}
+.app-brand .site-name{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink);
+}
+.app-brand img,.app-logo{
+  width:40px;height:40px;max-width:40px;max-height:40px;
+  object-fit:contain;flex-shrink:0;
+}
+
+.app-nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:0;flex:1}
+.app-nav .nav-link{
+  padding:.45rem .75rem;cursor:pointer;border-bottom:2px solid transparent;transition:.25s;
+  color:inherit;text-decoration:none;
+}
+.app-nav .nav-link .nt{font-size:.82rem;color:var(--dim);transition:.25s;white-space:nowrap}
+.app-nav .nav-link:hover .nt{color:var(--ink)}
+.app-nav .nav-link.active{border-bottom-color:var(--accent)}
+.app-nav .nav-link.active .nt{color:var(--ink)}
+
+.app-main{flex:1;min-height:0;position:relative;background:var(--bg);overflow:hidden}
+#route-root{
+  position:absolute;inset:0;overflow-y:auto;padding:2.5rem 5vw 3rem;
+}
+
+.app-footer{
+  display:none;flex-shrink:0;padding:.85rem 2rem;border-top:1px solid var(--line);
+  background:rgba(4,6,10,.92);justify-content:space-between;align-items:center;
+  gap:1rem;flex-wrap:wrap;
+}
+body.shell-mode .app-footer{display:flex}
+.app-footer p{
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;
+  color:var(--faint2);text-transform:uppercase;
+}
+
+#intro.show .intro-content{z-index:4;pointer-events:auto}
+#intro.show .enter{position:relative;z-index:5;display:inline-flex;opacity:1;visibility:visible;pointer-events:auto}
+
+@media(max-width:860px){
+  .app-header{flex-direction:column;align-items:stretch;padding:.85rem 1.1rem}
+  .app-nav{justify-content:flex-start;border-top:1px solid var(--line);padding-top:.5rem}
+  #route-root{padding:2rem 1.3rem 2.5rem}
+  .app-footer{padding:.75rem 1.1rem;flex-direction:column;align-items:flex-start}
+}

@@ -1,0 +1,20 @@
+{
+  "id": "about",
+  "labelKey": "about.label",
+  "titleKey": "about.title",
+  "leadKey": "about.lead",
+  "cards": [
+    {
+      "titleKey": "about.card.mission.title",
+      "bodyKey": "about.card.mission.body"
+    },
+    {
+      "titleKey": "about.card.identity.title",
+      "bodyKey": "about.card.identity.body"
+    },
+    {
+      "titleKey": "about.card.standard.title",
+      "bodyKey": "about.card.standard.body"
+    }
+  ]
+}

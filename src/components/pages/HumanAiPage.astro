@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getUi } from '../../i18n';
+
+const t = getUi(Astro.currentLocale ?? 'tr');
+const cards = ['roles', 'not_oracle', 'trace'] as const;
+---
+
+<BaseLayout>
+  <article id="route-root" class="page">
+    <p class="page-label">{t['human_ai.label']}</p>
+    <h1>{t['human_ai.title']}</h1>
+    <p class="page-lead">{t['human_ai.lead']}</p>
+
+    <div class="card-grid">
+      {
+        cards.map((id) => (
+          <section class="card">
+            <h2>{t[`human_ai.card.${id}.title`]}</h2>
+            <p>{t[`human_ai.card.${id}.body`]}</p>
+          </section>
+        ))
+      }
+    </div>
+  </article>
+</BaseLayout>

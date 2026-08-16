@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Astro outputs /path/index.html; Netlify Pretty URLs serves them as /path/
+# Internal links use trailing slashes — no redirect loop.

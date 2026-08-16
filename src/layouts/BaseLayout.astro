@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+import '../styles/intro.css';
+import '../styles/pages.css';
+import Header from '../components/shell/Header.astro';
+import Footer from '../components/shell/Footer.astro';
+import { getUi, LOCALES, type Locale } from '../i18n';
+import { getLocaleSwitchUrl } from '../i18n/routes';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const locale = Astro.currentLocale ?? 'tr';
+const t = getUi(locale);
+const title = Astro.props.title ?? t['meta.title'];
+const description = Astro.props.description ?? t['meta.description'];
+const origin = Astro.url.origin;
+---
+
+<!doctype html>
+<html lang={locale} data-theme="light" data-theme-mode="light" data-theme-auto-day={t['theme.system.day']} data-theme-auto-night={t['theme.system.night']}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <script is:inline>
+      (function () {
+        var K = 'ows_theme';
+        var M = ['system', 'light', 'dark', 'sepia'];
+        var DAY_START = 7;
+        var DAY_END = 19;
+        function clockTheme() {
+          var h = new Date().getHours();
+          return h >= DAY_START && h < DAY_END ? 'light' : 'dark';
+        }
+        function res(m) {
+          if (m === 'system') return clockTheme();
+          return m;
+        }
+        try {
+          var m = localStorage.getItem(K) || 'light';
+          if (M.indexOf(m) < 0) m = 'light';
+          var resolved = res(m);
+          document.documentElement.setAttribute('data-theme-mode', m);
+          document.documentElement.setAttribute('data-theme', resolved);
+          document.documentElement.setAttribute('data-theme-resolved', resolved);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme-mode', 'light');
+          document.documentElement.setAttribute('data-theme', 'light');
+          document.documentElement.setAttribute('data-theme-resolved', 'light');
+        }
+      })();
+    </script>
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {
+      LOCALES.map((loc) => (
+        <link
+          rel="alternate"
+          hreflang={loc}
+          href={`${origin}${getLocaleSwitchUrl(loc as Locale, Astro.url.pathname)}`}
+        />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={`${origin}${getLocaleSwitchUrl('tr', Astro.url.pathname)}`} />
+  </head>
+  <body class="app-ready shell-mode">
+    <div class="app-shell">
+      <Header t={t} locale={locale} />
+      <main class="app-main">
+        <slot />
+      </main>
+      <Footer t={t} />
+    </div>
+    <script src="../components/shell/theme.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { getUi, type Locale } from '../../i18n';
+import {
+  listDossierGroups,
+  getDossierEntry,
+  pickLocalized,
+  DOSSIER_CATEGORIES,
+} from '../../lib/dossiers';
+
+const dossierImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/dossiers/*.{jpg,jpeg,png,webp,gif,tif,tiff}',
+);
+
+const locale = (Astro.currentLocale ?? 'tr') as Locale;
+const t = getUi(locale);
+const groups = await listDossierGroups();
+
+const slugToCategory = new Map<string, string>();
+for (const cat of DOSSIER_CATEGORIES) {
+  for (const slug of cat.slugs) slugToCategory.set(slug, cat.labelKey);
+}
+
+type PortalCard = {
+  slug: string;
+  baseSlug: string;
+  code: string;
+  status: string;
+  version: string;
+  evidenceLevel: string;
+  riskLevel: string | undefined;
+  redTeamStatus: string;
+  title: string;
+  summary: string;
+  updated: string;
+  updatedTs: number;
+  href: string;
+  categoryId: string;
+  categoryLabel: string;
+  statusLabel: string;
+  evidenceLabel: string;
+  riskLabel: string;
+  cover: ImageMetadata | null;
+};
+
+const cards: PortalCard[] = [];
+
+for (const group of groups) {
+  const entry = await getDossierEntry(group.cardSlug, locale);
+  if (!entry) continue;
+  const { data } = entry;
+  const categoryId =
+    slugToCategory.get(group.baseSlug) ??
+    slugToCategory.get(group.cardSlug) ??
+    'dossiers.category.other';
+
+  let cover: ImageMetadata | null = null;
+  if (data.image) {
+    const match = dossierImages[`/src/assets/dossiers/${data.image}`];
+    if (match) cover = (await match()).default;
+  }
+
+  cards.push({
+    slug: group.cardSlug,
+    baseSlug: group.baseSlug,
+    code: data.code,
+    status: data.status,
+    version: data.version,
+    evidenceLevel: data.evidenceLevel,
+    riskLevel: data.riskLevel,
+    redTeamStatus: data.redTeamStatus,
+    title: pickLocalized(data.title, locale),
+    summary: pickLocalized(data.summary, locale),
+    updated: data.updated.toLocaleDateString(
+      locale === 'tr'
+        ? 'tr-TR'
+        : locale === 'el'
+          ? 'el-GR'
+          : locale === 'ru'
+            ? 'ru-RU'
+            : locale === 'uk'
+              ? 'uk-UA'
+              : 'en-GB',
+      { year: 'numeric', month: 'long', day: 'numeric' },
+    ),
+    updatedTs: data.updated.getTime(),
+    href: getRelativeLocaleUrl(locale, `/dossiers/${group.cardSlug}/`),
+    categoryId,
+    categoryLabel: t[categoryId as keyof typeof t],
+    statusLabel: t[`status.${data.status}` as keyof typeof t],
+    evidenceLabel: t[`evidence.${data.evidenceLevel}` as keyof typeof t],
+    riskLabel: data.riskLevel
+      ? t[`risk.${data.riskLevel}` as keyof typeof t]
+      : '—',
+    cover,
+  });
+}
+
+cards.sort((a, b) => b.updatedTs - a.updatedTs);
+
+const featured =
+  cards.find((c) => c.status === 'active') ?? cards[0] ?? null;
+const rest = featured ? cards.filter((c) => c.slug !== featured.slug) : cards;
+
+const categoryCounts = new Map<string, number>();
+for (const card of cards) {
+  categoryCounts.set(card.categoryId, (categoryCounts.get(card.categoryId) ?? 0) + 1);
+}
+
+const categoryChips = [
+  ...DOSSIER_CATEGORIES.map((cat) => ({
+    id: cat.labelKey,
+    label: t[cat.labelKey],
+    count: categoryCounts.get(cat.labelKey) ?? 0,
+  })).filter((c) => c.count > 0),
+];
+
+if (categoryCounts.get('dossiers.category.other')) {
+  categoryChips.push({
+    id: 'dossiers.category.other',
+    label: t['dossiers.category.other'],
+    count: categoryCounts.get('dossiers.category.other')!,
+  });
+}
+
+const placeholders = ['teomonya', 'puritan'] as const;
+---
+
+<BaseLayout>
+  <article id="route-root" class="page page--portal dossiers-portal">
+    <header class="portal-head">
+      <p class="page-label">{t['dossiers.label']}</p>
+      <h1>{t['dossiers.title']}</h1>
+      <p class="page-lead">{t['dossiers.lead']}</p>
+    </header>
+
+    {
+      featured && (
+        <a class="portal-manset" href={featured.href} data-cat={featured.categoryId} data-status={featured.status}>
+          <div class="portal-manset__media">
+            {featured.cover ? (
+              <Image
+                src={featured.cover}
+                alt={featured.title}
+                class="portal-manset__img"
+                widths={[640, 960, 1280]}
+                sizes="(max-width: 860px) 100vw, 55vw"
+              />
+            ) : (
+              <div class="portal-manset__fallback" aria-hidden="true" />
+            )}
+          </div>
+          <div class="portal-manset__body">
+            <p class="portal-manset__kicker">{t['home.manset.kicker']}</p>
+            <dl class="kunye kunye--dark kunye--compact">
+              <div><dt>{t['dossiers.table.code']}</dt><dd>{featured.code}</dd></div>
+              <div><dt>{t['dossiers.meta.status']}</dt><dd>{featured.statusLabel}</dd></div>
+              <div><dt>{t['dossiers.meta.version']}</dt><dd>{featured.version}</dd></div>
+              <div><dt>{t['dossiers.meta.evidence']}</dt><dd>{featured.evidenceLabel}</dd></div>
+              <div><dt>{t['dossiers.meta.risk']}</dt><dd>{featured.riskLabel}</dd></div>
+              <div><dt>{t['dossiers.table.category']}</dt><dd>{featured.categoryLabel}</dd></div>
+              <div class="kunye__full"><dt>{t['dossiers.meta.red_team']}</dt><dd>{featured.redTeamStatus}</dd></div>
+              <div><dt>{t['dossiers.meta.updated']}</dt><dd>{featured.updated}</dd></div>
+            </dl>
+            <h2 class="portal-manset__title">{featured.title}</h2>
+            <p class="portal-manset__lead">{featured.summary}</p>
+            <span class="portal-manset__cta">
+              {t['dossiers.preview.open']}
+              <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </a>
+      )
+    }
+
+    <div class="portal-toolbar" id="dossier-portal-toolbar">
+      <div class="portal-chips" role="group" aria-label={t['dossiers.filter.label']}>
+        <button type="button" class="portal-chip is-active" data-filter-cat="all">
+          {t['dossiers.filter.all']}
+          <span class="portal-chip__count">{cards.length}</span>
+        </button>
+        {
+          categoryChips.map((cat) => (
+            <button type="button" class="portal-chip" data-filter-cat={cat.id}>
+              {cat.label}
+              <span class="portal-chip__count">{cat.count}</span>
+            </button>
+          ))
+        }
+      </div>
+      <label class="portal-search">
+        <span class="sr-only">{t['dossiers.search.label']}</span>
+        <input
+          type="search"
+          id="dossier-portal-search"
+          placeholder={t['dossiers.search.placeholder']}
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </label>
+    </div>
+
+    <div class="portal-grid" id="dossier-portal-grid">
+      {
+        rest.map((card) => (
+          <a
+            class="portal-card"
+            href={card.href}
+            data-cat={card.categoryId}
+            data-status={card.status}
+            data-hay={`${card.code} ${card.title} ${card.summary}`.toLowerCase()}
+          >
+            <div class="portal-card__media">
+              {card.cover ? (
+                <Image
+                  src={card.cover}
+                  alt=""
+                  class="portal-card__img"
+                  widths={[400, 640]}
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                />
+              ) : (
+                <div class="portal-card__fallback" aria-hidden="true" />
+              )}
+              <span class="portal-card__badge">{card.categoryLabel}</span>
+            </div>
+            <div class="portal-card__body">
+              <h3 class="portal-card__title">{card.title}</h3>
+              <dl class="kunye kunye--card">
+                <div><dt>{t['dossiers.table.code']}</dt><dd>{card.code}</dd></div>
+                <div><dt>{t['dossiers.meta.status']}</dt><dd>{card.statusLabel}</dd></div>
+                <div><dt>{t['dossiers.meta.version']}</dt><dd>{card.version}</dd></div>
+                <div><dt>{t['dossiers.meta.evidence']}</dt><dd>{card.evidenceLabel}</dd></div>
+                <div><dt>{t['dossiers.meta.risk']}</dt><dd>{card.riskLabel}</dd></div>
+                <div><dt>{t['dossiers.table.category']}</dt><dd>{card.categoryLabel}</dd></div>
+                <div class="kunye__full"><dt>{t['dossiers.meta.red_team']}</dt><dd>{card.redTeamStatus}</dd></div>
+                <div><dt>{t['dossiers.meta.updated']}</dt><dd>{card.updated}</dd></div>
+              </dl>
+              <p class="portal-card__summary">{card.summary}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <p class="portal-empty" id="dossier-portal-empty" hidden>{t['dossiers.search.empty']}</p>
+
+    <section class="portal-upcoming" aria-labelledby="upcoming-heading">
+      <div class="portal-section-bar">
+        <h2 id="upcoming-heading">{t['dossiers.category.upcoming']}</h2>
+      </div>
+      <div class="portal-upcoming__grid">
+        {
+          placeholders.map((id) => (
+            <div class="portal-upcoming__item">
+              <h3>{t[`dossiers.card.${id}.title`]}</h3>
+              <p>{t[`dossiers.card.${id}.body`]}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <script src="./dossiers-portal.ts"></script>
+  </article>
+</BaseLayout>

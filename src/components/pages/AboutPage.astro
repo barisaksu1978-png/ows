@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getUi } from '../../i18n';
+
+const t = getUi(Astro.currentLocale ?? 'tr');
+const cards = ['mission', 'identity', 'standard'] as const;
+---
+
+<BaseLayout>
+  <article id="route-root" class="page">
+    <p class="page-label">{t['about.label']}</p>
+    <h1>{t['about.title']}</h1>
+    <p class="page-lead">{t['about.lead']}</p>
+
+    <div class="card-grid">
+      {
+        cards.map((id) => (
+          <section class="card">
+            <h2>{t[`about.card.${id}.title`]}</h2>
+            <p>{t[`about.card.${id}.body`]}</p>
+          </section>
+        ))
+      }
+    </div>
+  </article>
+</BaseLayout>

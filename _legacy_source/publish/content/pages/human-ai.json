@@ -1,0 +1,20 @@
+{
+  "id": "human-ai",
+  "labelKey": "human_ai.label",
+  "titleKey": "human_ai.title",
+  "leadKey": "human_ai.lead",
+  "cards": [
+    {
+      "titleKey": "human_ai.card.roles.title",
+      "bodyKey": "human_ai.card.roles.body"
+    },
+    {
+      "titleKey": "human_ai.card.not_oracle.title",
+      "bodyKey": "human_ai.card.not_oracle.body"
+    },
+    {
+      "titleKey": "human_ai.card.trace.title",
+      "bodyKey": "human_ai.card.trace.body"
+    }
+  ]
+}

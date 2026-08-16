@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getUi, type Locale } from '../../i18n';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { render } from 'astro:content';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import {
+  getDossierEntry,
+  getRegisterLinks,
+  pickLocalized,
+  MAP_SLUG_LABELS,
+} from '../../lib/dossiers';
+
+const dossierImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/dossiers/*.{jpg,jpeg,png,webp,gif,tif,tiff}'
+);
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const locale = (Astro.currentLocale ?? 'tr') as Locale;
+const t = getUi(locale);
+
+const entry = await getDossierEntry(slug, locale);
+if (!entry) {
+  return Astro.redirect(getRelativeLocaleUrl(locale, '/dossiers/'));
+}
+
+const { Content } = await render(entry);
+const { data } = entry;
+
+let coverImage: ImageMetadata | null = null;
+if (data.image) {
+  const match = dossierImages[`/src/assets/dossiers/${data.image}`];
+  if (match) coverImage = (await match()).default;
+}
+const caption = data.imageCaption ? pickLocalized(data.imageCaption, locale) : null;
+
+const title = pickLocalized(data.title, locale);
+const summary = pickLocalized(data.summary, locale);
+const registers = await getRegisterLinks(slug);
+const updated = data.updated.toLocaleDateString(
+  locale === 'tr' ? 'tr-TR' : locale === 'el' ? 'el-GR' : locale === 'ru' ? 'ru-RU' : locale === 'uk' ? 'uk-UA' : 'en-GB',
+  { year: 'numeric', month: 'long', day: 'numeric' },
+);
+---
+
+<BaseLayout title={`${title} · ${t['brand.name']}`} description={summary}>
+  <article id="route-root" class="page dossier-detail dossier-detail--portal">
+    <p class="page-label">{t['dossiers.label']}</p>
+
+    <section class="dossier-hero">
+      {
+        coverImage && (
+          <div class="dossier-hero__media">
+            <Image
+              src={coverImage}
+              alt={title}
+              class="dossier-hero__img"
+              widths={[600, 900, 1200]}
+              sizes="(max-width: 860px) 100vw, 50vw"
+            />
+          </div>
+        )
+      }
+      <div class="dossier-hero__body">
+        <dl class="kunye kunye--dark kunye--detail">
+          <div><dt>{t['dossiers.table.code']}</dt><dd class="dossier-code">{data.code}</dd></div>
+          <div><dt>{t['dossiers.meta.status']}</dt><dd>{t[`status.${data.status}`]}</dd></div>
+          <div><dt>{t['dossiers.meta.version']}</dt><dd>{data.version}</dd></div>
+          <div><dt>{t['dossiers.meta.evidence']}</dt><dd>{t[`evidence.${data.evidenceLevel}`]}</dd></div>
+          <div>
+            <dt>{t['dossiers.meta.risk']}</dt>
+            <dd>{data.riskLevel ? t[`risk.${data.riskLevel}`] : '—'}</dd>
+          </div>
+          <div><dt>{t['dossiers.meta.updated']}</dt><dd>{updated}</dd></div>
+          <div class="kunye__full">
+            <dt>{t['dossiers.meta.red_team']}</dt>
+            <dd>{data.redTeamStatus}</dd>
+          </div>
+        </dl>
+        <h1>{title}</h1>
+        <p class="page-lead">{summary}</p>
+      </div>
+    </section>
+
+    {
+      registers.hasPopular && (
+        <nav class="register-tabs" aria-label="register">
+          <a
+            class={`register-tab${!registers.isPopular ? ' register-tab--active' : ''}`}
+            href={getRelativeLocaleUrl(locale, `/dossiers/${registers.forensicSlug}/`)}
+            aria-current={!registers.isPopular ? 'page' : undefined}
+          >
+            {t['dossiers.register.forensic']}
+          </a>
+          <a
+            class={`register-tab${registers.isPopular ? ' register-tab--active' : ''}`}
+            href={getRelativeLocaleUrl(locale, `/dossiers/${registers.popularSlug}/`)}
+            aria-current={registers.isPopular ? 'page' : undefined}
+          >
+            {t['dossiers.register.popular']}
+          </a>
+        </nav>
+      )
+    }
+
+    {
+      data.relatedMaps.length > 0 && (
+        <section class="dossier-related">
+          <h2 class="dossier-related-title">{t['dossiers.meta.maps']}</h2>
+          <ul class="dossier-related-list">
+            {
+              data.relatedMaps.map((mapSlug) => {
+                const labelKey = MAP_SLUG_LABELS[mapSlug];
+                const label = labelKey ? t[labelKey] : mapSlug;
+                return (
+                  <li>
+                    <a href={getRelativeLocaleUrl(locale, `/atlas/${mapSlug}/`)}>{label}</a>
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </section>
+      )
+    }
+
+    <div class="dossier-body">
+      {
+        coverImage && caption && (
+          <p class="dossier-figcaption dossier-figcaption--inline">{caption}</p>
+        )
+      }
+      <div class="dossier-prose">
+        <Content />
+      </div>
+    </div>
+  </article>
+</BaseLayout>

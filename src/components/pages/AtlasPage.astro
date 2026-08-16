@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { getUi } from '../../i18n';
+import { listAtlasCards, getAtlasEntry } from '../../lib/atlas';
+
+const atlasImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/atlas/*.{jpg,jpeg,png,webp,gif}',
+);
+const rootImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/*.{jpg,jpeg,png,webp,gif}',
+);
+
+const t = getUi(Astro.currentLocale ?? 'tr');
+const locale = Astro.currentLocale ?? 'tr';
+const baseCards = await listAtlasCards(locale);
+
+const cards = [];
+for (const card of baseCards) {
+  const entry = await getAtlasEntry(card.slug, locale);
+  let cover: ImageMetadata | null = null;
+  const imageName = entry?.data.image as string | undefined;
+  if (imageName) {
+    const match =
+      atlasImages[`/src/assets/atlas/${imageName}`] ??
+      rootImages[`/src/assets/${imageName}`];
+    if (match) cover = (await match()).default;
+  }
+  cards.push({ ...card, cover, href: getRelativeLocaleUrl(locale, `/atlas/${card.slug}/`) });
+}
+
+const featured = cards[0] ?? null;
+const rest = featured ? cards.slice(1) : cards;
+---
+
+<BaseLayout>
+  <article id="route-root" class="page page--portal atlas-portal">
+    <header class="portal-head">
+      <p class="page-label">{t['atlas.label']}</p>
+      <h1>{t['atlas.title']}</h1>
+      <p class="page-lead">{t['atlas.lead']}</p>
+    </header>
+
+    {
+      featured && (
+        <a class="portal-manset" href={featured.href}>
+          <div class="portal-manset__media">
+            {featured.cover ? (
+              <Image
+                src={featured.cover}
+                alt={featured.title}
+                class="portal-manset__img"
+                widths={[640, 960, 1280]}
+                sizes="(max-width: 860px) 100vw, 55vw"
+              />
+            ) : (
+              <div class="portal-manset__fallback" aria-hidden="true" />
+            )}
+          </div>
+          <div class="portal-manset__body">
+            <p class="portal-manset__kicker">{t['home.manset.kicker']}</p>
+            <p class="portal-manset__meta">
+              <span>{featured.period}</span>
+            </p>
+            <h2 class="portal-manset__title">{featured.title}</h2>
+            <p class="portal-manset__lead">{featured.summary}</p>
+            <span class="portal-manset__cta">
+              {featured.title}
+              <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </a>
+      )
+    }
+
+    <div class="portal-grid">
+      {
+        rest.map((card) => (
+          <a class="portal-card" href={card.href}>
+            <div class="portal-card__media">
+              {card.cover ? (
+                <Image
+                  src={card.cover}
+                  alt=""
+                  class="portal-card__img"
+                  widths={[400, 640]}
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                />
+              ) : (
+                <div class="portal-card__fallback" aria-hidden="true" />
+              )}
+              <span class="portal-card__badge">{card.period}</span>
+            </div>
+            <div class="portal-card__body">
+              <h3 class="portal-card__title">{card.title}</h3>
+              <p class="portal-card__summary">{card.summary}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </article>
+</BaseLayout>

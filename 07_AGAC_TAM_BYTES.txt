@@ -1,0 +1,926 @@
+﻿================================================================================
+07_Notlar_Kod_Projeler — TAM ANATOMI (her dosya + byte)
+Kok: C:\Users\lcq\OneDrive\Desktop\_DUZEN_2026\07_Notlar_Kod_Projeler
+Tarih: 2026-08-01 14:58:15
+================================================================================
+
+07_Notlar_Kod_Projeler/  [872 dosya | 165.476.709 byte]
+├── 01_Yaroslav/  [93 dosya | 3.317.885 byte]
+│   ├── DOSYA1_1.3_Yaroslav_Synthesius_ham (1).md  |  12.185 byte
+│   ├── DOSYA1_1.3_Yaroslav_Synthesius_ham (2).md  |  14.935 byte
+│   ├── DOSYA1_1.3_Yaroslav_Synthesius_ham (3).md  |  15.744 byte
+│   ├── DOSYA1_1.3_Yaroslav_Synthesius_ham.md  |  11.167 byte
+│   ├── RESUME-yaroslav-OWS-2026-002.md  |  9.840 byte
+│   ├── yaroslav_unvan_terminoloji_raporu.md  |  18.554 byte
+│   ├── yaroslav-kalintilari-bosluk-kapatma.md  |  24.503 byte
+│   ├── yaroslav-kayip-kalintilar.ru.md  |  39.684 byte
+│   ├── yaroslav-kayip-kalintilar.tr.md  |  22.046 byte
+│   ├── yaroslav-mudriy-kalintilari-arsiv-izi.md  |  24.306 byte
+│   ├── yaroslav-mudriy-kayip-kalintilar.md  |  20.770 byte
+│   ├── yaroslav-mudriy-kayip-kalintilar-v10.md  |  31.030 byte
+│   ├── yaroslav-mudriy-kayip-kalintilar-v11.md  |  31.237 byte
+│   ├── yaroslav-mudriy-kayip-kalintilar-v12.md  |  31.536 byte
+│   ├── yaroslav-mudriy-kayip-kalintilar-v2.md  |  22.396 byte
+│   ├── yaroslav-mudriy-kayip-kalintilar-v3.md  |  20.558 byte
+│   ├── yaroslav-mudriy-kayip-kalintilar-v4.md  |  17.211 byte
+│   ├── yaroslav-mudriy-kayip-kalintilar-v6.md  |  26.404 byte
+│   ├── yaroslav-mudriy-kayip-kalintilar-v7.md  |  28.613 byte
+│   ├── yaroslav-mudriy-kayip-kalintilar-v9.md  |  30.338 byte
+│   ├── yaroslav-mudriy-utrachennye-ostanki-v12.ru.md  |  57.312 byte
+│   ├── yaroslav-relics-el (1).md  |  67.336 byte
+│   ├── yaroslav-relics-el (2).md  |  67.983 byte
+│   ├── yaroslav-relics-el (3).md  |  68.119 byte
+│   ├── yaroslav-relics-el.md  |  61.606 byte
+│   ├── yaroslav-relics-el-v1.8-native-final-locked.md  |  73.344 byte
+│   ├── yaroslav-relics-en (10).md  |  39.216 byte
+│   ├── yaroslav-relics-en (2).md  |  32.380 byte
+│   ├── yaroslav-relics-en (3).md  |  35.561 byte
+│   ├── yaroslav-relics-en (4).md  |  36.122 byte
+│   ├── yaroslav-relics-en (5).md  |  36.207 byte
+│   ├── yaroslav-relics-en (6).md  |  39.192 byte
+│   ├── yaroslav-relics-en (8).md  |  39.181 byte
+│   ├── yaroslav-relics-en (9).md  |  39.268 byte
+│   ├── yaroslav-relics-en.md  |  32.321 byte
+│   ├── yaroslav-relics-en-v1.8-final-clean.md  |  39.483 byte
+│   ├── yaroslav-relics-en-v1.8-final-locked.md  |  39.502 byte
+│   ├── yaroslav-relics-popular-el-v1.8-native-final-locked.md  |  26.128 byte
+│   ├── yaroslav-relics-popular-en (2).md  |  13.275 byte
+│   ├── yaroslav-relics-popular-en (3).md  |  13.370 byte
+│   ├── yaroslav-relics-popular-en (4).md  |  13.293 byte
+│   ├── yaroslav-relics-popular-en.md  |  13.213 byte
+│   ├── yaroslav-relics-popular-en-v1.8-final-clean.md  |  13.397 byte
+│   ├── yaroslav-relics-popular-en-v1.8-final-locked.md  |  13.437 byte
+│   ├── yaroslav-relics-popular-ru (1).md  |  24.602 byte
+│   ├── yaroslav-relics-popular-ru (2).md  |  24.116 byte
+│   ├── yaroslav-relics-popular-ru.md  |  24.112 byte
+│   ├── yaroslav-relics-popular-ru-v1.8-native-final.md  |  24.178 byte
+│   ├── yaroslav-relics-popular-ru-v1.8-native-final-clean.md  |  23.967 byte
+│   ├── yaroslav-relics-popular-tr (1).md  |  11.061 byte
+│   ├── yaroslav-relics-popular-tr (12).md  |  13.479 byte
+│   ├── yaroslav-relics-popular-tr (2).md  |  11.782 byte
+│   ├── yaroslav-relics-popular-tr (3).md  |  12.072 byte
+│   ├── yaroslav-relics-popular-tr (4).md  |  12.490 byte
+│   ├── yaroslav-relics-popular-tr (6).md  |  13.343 byte
+│   ├── yaroslav-relics-popular-tr (7).md  |  13.271 byte
+│   ├── yaroslav-relics-popular-tr (8).md  |  13.383 byte
+│   ├── yaroslav-relics-popular-tr (9).md  |  13.389 byte
+│   ├── yaroslav-relics-popular-tr.md  |  8.673 byte
+│   ├── yaroslav-relics-popular-uk.md  |  23.244 byte
+│   ├── yaroslav-relics-popular-uk-v1.8-native-final.md  |  23.048 byte
+│   ├── yaroslav-relics-popular-uk-v1.8-native-final-locked.md  |  23.208 byte
+│   ├── yaroslav-relics-popular-uk-v1.8-native-final-patched.md  |  23.064 byte
+│   ├── yaroslav-relics-ru (2).md  |  55.702 byte
+│   ├── yaroslav-relics-ru (3).md  |  61.158 byte
+│   ├── yaroslav-relics-ru (4).md  |  61.818 byte
+│   ├── yaroslav-relics-ru (5).md  |  61.946 byte
+│   ├── yaroslav-relics-ru (6).md  |  69.402 byte
+│   ├── yaroslav-relics-ru (7).md  |  69.871 byte
+│   ├── yaroslav-relics-ru (8).md  |  69.275 byte
+│   ├── yaroslav-relics-ru.md  |  55.474 byte
+│   ├── yaroslav-relics-ru-v1.8-native-final.md  |  69.565 byte
+│   ├── yaroslav-relics-ru-v1.8-native-final-clean.md  |  69.134 byte
+│   ├── yaroslav-relics-tr (1).md  |  32.874 byte
+│   ├── yaroslav-relics-tr (12).md  |  39.240 byte
+│   ├── yaroslav-relics-tr (2).md  |  35.162 byte
+│   ├── yaroslav-relics-tr (3).md  |  35.764 byte
+│   ├── yaroslav-relics-tr (4).md  |  35.847 byte
+│   ├── yaroslav-relics-tr (6).md  |  36.625 byte
+│   ├── yaroslav-relics-tr (7).md  |  38.176 byte
+│   ├── yaroslav-relics-tr (8).md  |  39.151 byte
+│   ├── yaroslav-relics-tr (9).md  |  39.150 byte
+│   ├── yaroslav-relics-tr.md  |  31.800 byte
+│   ├── yaroslav-relics-uk (1).md  |  54.435 byte
+│   ├── yaroslav-relics-uk (3).md  |  54.442 byte
+│   ├── yaroslav-relics-uk (4).md  |  59.667 byte
+│   ├── yaroslav-relics-uk (5).md  |  60.297 byte
+│   ├── yaroslav-relics-uk (6).md  |  60.425 byte
+│   ├── yaroslav-relics-uk (7).md  |  67.096 byte
+│   ├── yaroslav-relics-uk.md  |  54.368 byte
+│   ├── yaroslav-relics-uk-v1.8-native-final.md  |  66.690 byte
+│   ├── yaroslav-relics-uk-v1.8-native-final-locked.md  |  66.841 byte
+│   └── yaroslav-relics-uk-v1.8-native-final-patched.md  |  66.705 byte
+├── 02_DOSYA1_Ortodoks_Kiev/  [88 dosya | 1.445.965 byte]
+│   ├── BOLUM_I_yazim_v0.md  |  17.993 byte
+│   ├── BOLUM_I_yazim_v1.md  |  18.904 byte
+│   ├── BOLUM_I_yazim_v1_1.md  |  19.283 byte
+│   ├── BOLUM_I_yazim_v1_2.md  |  19.654 byte
+│   ├── DOSYA1_1.1_PVL_birlesik_taslak.md  |  12.070 byte
+│   ├── DOSYA1_1.1_PVL_final_asama5 (1).md  |  16.842 byte
+│   ├── DOSYA1_1.1_PVL_final_asama5 (2).md  |  17.369 byte
+│   ├── DOSYA1_1.1_PVL_final_asama5.md  |  13.807 byte
+│   ├── DOSYA1_1.1_PVL_Synthesius_ham.md  |  11.904 byte
+│   ├── DOSYA1_1.2_Korsun_Synthesius_ham (1).md  |  13.610 byte
+│   ├── DOSYA1_1.2_Korsun_Synthesius_ham (2).md  |  19.649 byte
+│   ├── DOSYA1_1.2_Korsun_Synthesius_ham (3).md  |  19.619 byte
+│   ├── DOSYA1_1.2_Korsun_Synthesius_ham.md  |  12.070 byte
+│   ├── DOSYA1_1.4_UcuncuRoma_Synthesius_ham (1).md  |  13.963 byte
+│   ├── DOSYA1_1.4_UcuncuRoma_Synthesius_ham (2).md  |  16.777 byte
+│   ├── DOSYA1_1.4_UcuncuRoma_Synthesius_ham.md  |  12.267 byte
+│   ├── DOSYA1_ana_govde_iskeleti_v0.md  |  9.703 byte
+│   ├── DOSYA1_birlesik_MASTER_v0.md  |  26.858 byte
+│   ├── DOSYA1_birlesik_MASTER_v1.1_mikroyama.md  |  29.445 byte
+│   ├── DOSYA1_birlesik_MASTER_v1.2_sinirli_montaj.md  |  33.831 byte
+│   ├── DOSYA1_birlesik_MASTER_v1_cerrahi_revizyon.md  |  29.100 byte
+│   ├── DOSYA1_Faz1_2019Tomos_Yunanca_dogrulama_raporu.md  |  9.306 byte
+│   ├── DOSYA1_FAZ1_ARA_KARAR_MASTER_GUNCELLEME_KILIDI_v1.md  |  12.834 byte
+│   ├── DOSYA1_FAZ1_ARA_KARAR_v1.1_MIKROYAMA.md  |  5.275 byte
+│   ├── DOSYA1_Faz1_arakarar_MASTER_guncelleme_kilidi.md  |  9.236 byte
+│   ├── DOSYA1_Faz1_arakarar_v2.1_mikroyama.md  |  5.790 byte
+│   ├── DOSYA1_Faz1_arakarar_v2_dort_cikti.md  |  12.031 byte
+│   ├── DOSYA1_KATMAN1_arasentez_bagimsiz.md  |  9.617 byte
+│   ├── DOSYA1_KATMAN1_arasentez_Synthesius_ham.md  |  8.996 byte
+│   ├── DOSYA1_KATMAN2_2.1_KievKanonikKonum_Synthesius_ham (1).md  |  12.644 byte
+│   ├── DOSYA1_KATMAN2_2.1_KievKanonikKonum_Synthesius_ham (2).md  |  12.936 byte
+│   ├── DOSYA1_KATMAN2_2.1_KievKanonikKonum_Synthesius_ham (7).md  |  15.644 byte
+│   ├── DOSYA1_KATMAN2_2.1_KievKanonikKonum_Synthesius_ham.md  |  11.161 byte
+│   ├── DOSYA1_KATMAN2_2.2_PolonyaLitvanyaMoskovaAyrismasi_Synthesius_ham (1).md  |  24.620 byte
+│   ├── DOSYA1_KATMAN2_2.2_PolonyaLitvanyaMoskovaAyrismasi_Synthesius_ham (2).md  |  26.491 byte
+│   ├── DOSYA1_KATMAN2_2.2_PolonyaLitvanyaMoskovaAyrismasi_Synthesius_ham (3).md  |  27.173 byte
+│   ├── DOSYA1_KATMAN2_2.2_PolonyaLitvanyaMoskovaAyrismasi_Synthesius_ham.md  |  21.175 byte
+│   ├── DOSYA1_KATMAN2_2.3_BrestBirligi1596_asama2_birlesik.md  |  22.931 byte
+│   ├── DOSYA1_KATMAN2_2.3_BrestBirligi1596_asama3_1_kilit.md  |  23.134 byte
+│   ├── DOSYA1_KATMAN2_2.3_BrestBirligi1596_asama3_kaynakdogrulamali.md  |  22.292 byte
+│   ├── DOSYA1_KATMAN2_2.3_BrestBirligi1596_Synthesius_ham.md  |  24.941 byte
+│   ├── DOSYA1_KATMAN2_2.4_1686KievYetkiMeselesi_asama2_birlesik.md  |  20.781 byte
+│   ├── DOSYA1_KATMAN2_2.4_1686KievYetkiMeselesi_asama3_1_kilit.md  |  22.500 byte
+│   ├── DOSYA1_KATMAN2_2.4_1686KievYetkiMeselesi_asama3_kaynakdogrulamali.md  |  21.435 byte
+│   ├── DOSYA1_KATMAN2_2.4_1686KievYetkiMeselesi_Synthesius_ham.md  |  20.942 byte
+│   ├── DOSYA1_KATMAN2_2.5_OCU2019_asama2_birlesik.md  |  17.339 byte
+│   ├── DOSYA1_KATMAN2_2.5_OCU2019_asama3_1_kilit.md  |  21.035 byte
+│   ├── DOSYA1_KATMAN2_2.5_OCU2019_asama3_kaynakdogrulamali.md  |  18.420 byte
+│   ├── DOSYA1_KATMAN2_2.5_OCU2019_Synthesius_ham.md  |  17.437 byte
+│   ├── DOSYA1_KATMAN2_2.6_arasentez_asama2_kilit.md  |  18.810 byte
+│   ├── DOSYA1_KATMAN2_2.6_arasentez_bagimsiz.md  |  19.462 byte
+│   ├── DOSYA1_KATMAN2_2.6_arasentez_Synthesius_ham.md  |  14.924 byte
+│   ├── DOSYA1_KATMAN2_harita_v0.md  |  11.905 byte
+│   ├── DOSYA1_KATMAN2_harita_v0_1.md  |  13.827 byte
+│   ├── DOSYA1_KATMAN3_3.2_TomosTeknikKontrol_v2_birincil_dogrulamali.md  |  14.438 byte
+│   ├── DOSYA1_KATMAN3_3.6_v3.1_yamalanmis_tavanli_taslak.md  |  12.459 byte
+│   ├── DOSYA1_KATMAN3_3.6_v3_redteam_raporu.md  |  13.280 byte
+│   ├── DOSYA1_KATMAN3_3.6_v3_tavanli_calisma_taslagi.md  |  11.993 byte
+│   ├── DOSYA1_KATMAN3_BolumIII_dipnot_dili_taslagi.md  |  5.366 byte
+│   ├── DOSYA1_KATMAN3_BolumIII_iskeleti.md  |  11.050 byte
+│   ├── DOSYA1_KATMAN3_BolumIII_v1_kontrollu_taslak.md  |  15.388 byte
+│   ├── DOSYA1_KATMAN3_BolumIII_v2_cerrahi_revizyon.md  |  17.455 byte
+│   ├── DOSYA1_KATMAN3_F_aday1_temizlenmis_matris.md  |  10.834 byte
+│   ├── DOSYA1_KATMAN3_F_BolumIII_entegrasyon_paketi_v2.md  |  8.887 byte
+│   ├── DOSYA1_KATMAN3_F_sorusu_baslangic_modulu.md  |  9.101 byte
+│   ├── DOSYA1_KATMAN3_T2_capalama_ara_karari_v1.md  |  9.422 byte
+│   ├── DOSYA1_TAM_DEVIR_KILIDI_v2.1_mega_resume (1).md  |  17.610 byte
+│   ├── DOSYA1_TAM_DEVIR_KILIDI_v2.1_mega_resume.md  |  15.519 byte
+│   ├── DOSYA1_TAM_DEVIR_KILIDI_v2.2_mega_resume.md  |  20.520 byte
+│   ├── DOSYA1_TAM_DEVIR_KILIDI_v2_mega_resume.md  |  13.323 byte
+│   ├── KATMAN3_CZ_TEOPOLITIK_v1.md  |  54.931 byte
+│   ├── KATMAN3_CZ_TEOPOLITIK_v2.md  |  57.646 byte
+│   ├── KATMAN3_ONARIM_ISLETIM_KITI (1).md  |  13.353 byte
+│   ├── KATMAN3_ONARIM_ISLETIM_KITI.md  |  9.865 byte
+│   ├── KATMAN3_YAZIM_PROMPT_v1.md  |  8.919 byte
+│   ├── KATMAN3_YAZIM_PROMPT_v2.md  |  11.219 byte
+│   ├── MASTER_EK_KAYDI_F_BolumIII_v2.md  |  4.065 byte
+│   ├── MASTER_EK_KAYDI_T2_capalama_ara_karari_v1.md  |  3.145 byte
+│   ├── MASTER_KAYIT_KATMAN3_BolumIII_v2_acik_kontrol_kilidi.md  |  8.482 byte
+│   ├── MUHUR_BELGESI_KATMAN3.md  |  2.744 byte
+│   ├── Ortodoks_Eksen_CMS_CLEAN.md  |  13.832 byte
+│   ├── Ortodoks_Eksen_PUBLIC_EXPORT.md  |  14.263 byte
+│   ├── Ortodoks_Eksen_site_yayin_metni_v0.1.md  |  16.702 byte
+│   ├── Ortodoks_Eksen_site_yayin_metni_v0.1r.md  |  17.023 byte
+│   ├── Ortodoks_Eksen_site_yayin_metni_v0.md  |  12.346 byte
+│   ├── Ortodoks_Eksen_site_yayin_metni_v0_1r-clean.md  |  19.163 byte
+│   ├── Osmanli_Turkiye_yama_paketi_v0.md  |  14.550 byte
+│   └── READER_ortodoks_TR_kaynak.html  |  15.310 byte
+├── 03_Teomonya/  [58 dosya | 1.164.965 byte]
+│   ├── 00_DEVIR_BELGESI_Synthesius_TEOMONYA.md  |  13.806 byte
+│   ├── HRISTIYAN_SIYONIZMI_baskan_ve_katman_listeleri.md  |  5.788 byte
+│   ├── IX_ilk_dilim_taslak.md  |  7.958 byte
+│   ├── IX_ilk_dilim_taslak_v2.md  |  9.985 byte
+│   ├── ix_forensic_en.md  |  57.456 byte
+│   ├── K3_Kudus_nedensel_ayristirma.md  |  30.269 byte
+│   ├── TEOMONYA_§5_protestan_hatlari_omurgasi.md  |  7.828 byte
+│   ├── TEOMONYA_§VIII_yeniden_insa.md  |  7.243 byte
+│   ├── TEOMONYA_arastirma_matrisi (1).md  |  11.319 byte
+│   ├── TEOMONYA_arastirma_matrisi (3).md  |  12.232 byte
+│   ├── TEOMONYA_arastirma_matrisi.md  |  9.402 byte
+│   ├── TEOMONYA_AYRI_MODUL_hristiyan_gelenekleri_iki_katman.md  |  13.528 byte
+│   ├── TEOMONYA_AYRI_MODUL_kaynakcali (2).md  |  34.558 byte
+│   ├── TEOMONYA_AYRI_MODUL_kaynakcali.md  |  27.710 byte
+│   ├── TEOMONYA_baslik_haritasi.md  |  3.236 byte
+│   ├── TEOMONYA_DENETIM_resume_sheet.md  |  6.630 byte
+│   ├── TEOMONYA_DENETIM_resume_sheet_v2.md  |  9.174 byte
+│   ├── TEOMONYA_DEVIR_resume_sheet (1).md  |  17.210 byte
+│   ├── TEOMONYA_DEVIR_resume_sheet.md  |  11.407 byte
+│   ├── TEOMONYA_DEVIR_resume_sheet_v3.md  |  15.307 byte
+│   ├── teomonya_forensic_tr.md  |  56.574 byte
+│   ├── TEOMONYA_IX_forensic_seal_v4 (1).md  |  3.379 byte
+│   ├── TEOMONYA_IX_forensic_seal_v4.md  |  2.620 byte
+│   ├── TEOMONYA_IX_kamu_sade.md  |  4.838 byte
+│   ├── TEOMONYA_kapsama_haritasi_TAM.md  |  26.474 byte
+│   ├── TEOMONYA_karar_ve_falsifier_kaydi.md  |  4.468 byte
+│   ├── TEOMONYA_KATMAN2_DEVIR_KILIDI_HANDOFF.md  |  16.224 byte
+│   ├── TEOMONYA_KATMAN3_DEVIR_KILIDI_HANDOFF (1).md  |  15.818 byte
+│   ├── TEOMONYA_KATMAN3_DEVIR_KILIDI_HANDOFF.md  |  15.211 byte
+│   ├── TEOMONYA_MASTER_forensic_SEALED_v10.docx  |  69.407 byte
+│   ├── TEOMONYA_MASTER_forensic_SEALED_v4.docx  |  24.391 byte
+│   ├── TEOMONYA_MASTER_forensic_SEALED_v5.docx  |  45.534 byte
+│   ├── TEOMONYA_MASTER_forensic_SEALED_v6.docx  |  46.102 byte
+│   ├── TEOMONYA_MASTER_forensic_SEALED_v7.docx  |  64.677 byte
+│   ├── TEOMONYA_MASTER_forensic_SEALED_v8.docx  |  66.327 byte
+│   ├── TEOMONYA_MASTER_forensic_SEALED_v9.docx  |  68.215 byte
+│   ├── TEOMONYA_MASTER_forensic_streamG_SEALED_v2.docx  |  15.076 byte
+│   ├── TEOMONYA_MASTER_iddia_listesi_v1.md  |  13.400 byte
+│   ├── TEOMONYA_MASTER_iddia_listesi_v2.md  |  5.381 byte
+│   ├── TEOMONYA_MASTER_kaynakca (1).md  |  23.890 byte
+│   ├── TEOMONYA_MASTER_kaynakca (3).md  |  30.226 byte
+│   ├── TEOMONYA_MASTER_kaynakca.md  |  18.504 byte
+│   ├── TEOMONYA_MASTER_register_v3.md  |  7.290 byte
+│   ├── TEOMONYA_omurga_zaman_cizelgesi.md  |  5.150 byte
+│   ├── TEOMONYA_omurga_zenginlestirilmis_iplik_evrim.md  |  7.515 byte
+│   ├── TEOMONYA_ORTODOKS_EKSENI_KATMAN2_DEVIR_KILIDI.md  |  16.454 byte
+│   ├── TEOMONYA_ORTODOKS_EKSENI_YOLCULUK_KILIDI.md  |  5.642 byte
+│   ├── TEOMONYA_RU.md  |  103.287 byte
+│   ├── TEOMONYA_streamG_layer_seal_v2.md  |  2.928 byte
+│   ├── TEOMONYA_teyit_ve_karsilastirma.md  |  17.080 byte
+│   ├── TEOMONYA_v10_SEAL.md  |  4.874 byte
+│   ├── TEOMONYA_v5_SEAL.txt  |  3.605 byte
+│   ├── TEOMONYA_v6_SEAL.md  |  2.587 byte
+│   ├── TEOMONYA_v7_SEAL.md  |  4.175 byte
+│   ├── TEOMONYA_v8_SEAL.md  |  5.505 byte
+│   ├── TEOMONYA_v9_SEAL.md  |  5.532 byte
+│   ├── TEOMONYA_v9_SEAL__1_.md  |  5.532 byte
+│   └── TEOMONYA-streamG-kaynak-dogrulama-raporu.md  |  19.027 byte
+├── 04_Synthesius_Devir/  [5 dosya | 91.579 byte]
+│   ├── 00_NEW_CHAT_START_PROMPT_S6_DEVIR_v1.txt  |  399 byte
+│   ├── 00_SYNTHESIUS_DEVIR_RESUME_SHEET.md  |  10.736 byte
+│   ├── Sen bu çalışmada Synthesius.docx  |  52.558 byte
+│   ├── SYNTHESIUS_RESUME_v3_1.md  |  6.677 byte
+│   └── synthesius_transition_v4.md  |  21.209 byte
+├── 05_OWS-2026-003_Nevskiy/  [98 dosya | 2.468.043 byte]
+│   ├── 1781852737383_OWS-2026-003_MASTER_CETVEL_v3_KANONIK.md  |  72.387 byte
+│   ├── 1781852757998_OWS-2026-003_OMURGA_HARITASI_killpoint.md  |  11.695 byte
+│   ├── 1781852774440_OWS-2026-003_RESUME_DEVIR.md  |  9.164 byte
+│   ├── 1781852787277_OWS-2026-003_BLOK_B_KAPANIS_LOGU.md  |  6.140 byte
+│   ├── 1781852797430_OWS-2026-003_T4_NEVSKIY_KAPANIS_LOGU.md  |  6.702 byte
+│   ├── HERODOT Bağımsız Kör İnceleme.md  |  256.227 byte
+│   ├── herodot_2tur_belge_cikarimi.md  |  41.780 byte
+│   ├── herodot_3tur_protokol_17447ss.md  |  53.400 byte
+│   ├── herodot_4tur_tanimama_paradoksu.md  |  43.712 byte
+│   ├── herodot_5tur_kaynak_matrisi.md  |  14.779 byte
+│   ├── HERODOT_AV_EMRI_R7_R8_R9_20260727.md  |  10.193 byte
+│   ├── HERODOT_AV_R7_R8_R9_27072026.md  |  20.773 byte
+│   ├── herodot_ham_is1.md  |  5.499 byte
+│   ├── herodot_kaynak_listesi.md  |  40.011 byte
+│   ├── HERODOT_OWS003_T2_ONCELIK1_NEVSKIY_ODUL_TAHT.md  |  17.626 byte
+│   ├── HERODOT_OWS003_T2_ONCELIK2A_DANYLO_BOYUN_EGME.md  |  12.623 byte
+│   ├── HERODOT_OWS003_T2_ONCELIK2B-i_HEDGE_KRONOLOJI.md  |  16.209 byte
+│   ├── HERODOT_OWS003_T2_ONCELIK2B-ii-i_TAC_HEDGE.md  |  12.397 byte
+│   ├── HERODOT_OWS003_T2_ONCELIK2B-ii-ii_BURUNDAI_KAPANIS.md  |  18.762 byte
+│   ├── HERODOT_OWS003_T3_MODERN_SOYLEM_AYNA.md  |  27.357 byte
+│   ├── HERODOT_OWS003_TEYIT_LOG_5BORC.md  |  17.747 byte
+│   ├── HERODOT_TUR1_BLOK_B_YAMA.md  |  15.957 byte
+│   ├── HERODOT_TUR1_CETVEL_CEVAP_BLOK_B_Q.md  |  73.487 byte
+│   ├── HERODOT_TUR1_CETVEL_DILIM_BLOK_B_Q.md  |  10.722 byte
+│   ├── HERODOT_TUR2_ONCELIK1_MITEM.md  |  19.056 byte
+│   ├── HERODOT_TUR2_ONCELIK3-4_KAPANIS.md  |  13.250 byte
+│   ├── HERODOT_TUR3_ONCELIK1_TAC.md  |  20.137 byte
+│   ├── HERODOT_TUR3_ONCELIK2_TOREN.md  |  26.363 byte
+│   ├── HERODOT_TUR3_ONCELIK3_KAPANIS.md  |  14.352 byte
+│   ├── KONTROL_TK21_YOKLUK_27072026.md  |  16.193 byte
+│   ├── ows_nevsky_danylo_soru_cetveli_master_v3.md  |  69.561 byte
+│   ├── ows_nevsky_danylo_soru_cetveli_v3_ek_bloklar.md  |  31.855 byte
+│   ├── OWS-2026-003_BIRINCIL_VERBATIM_KAPANIS.md  |  20.180 byte
+│   ├── OWS-2026-003_BIRLESIK_DOSYA_FINAL.md  |  34.793 byte
+│   ├── OWS-2026-003_BIRLESIK_DOSYA_FINAL_v2.md  |  38.464 byte
+│   ├── OWS-2026-003_BIRLESIK_DOSYA_FINAL_v3.md  |  40.968 byte
+│   ├── OWS-2026-003_BIRLESIK_DOSYA_FINAL_v4 (1).md  |  44.096 byte
+│   ├── OWS-2026-003_BIRLESIK_DOSYA_FINAL_v4.md  |  42.629 byte
+│   ├── OWS-2026-003_BIRLESIK_DOSYA_FINAL_v5 (3).md  |  44.446 byte
+│   ├── OWS-2026-003_BIRLESIK_DOSYA_FINAL_v5.2.md  |  44.497 byte
+│   ├── OWS-2026-003_BIRLESIK_DOSYA_FINAL_v5.md  |  44.444 byte
+│   ├── OWS-2026-003_BIRLESIK_DOSYA_FINAL_v5_3.md  |  45.129 byte
+│   ├── OWS-2026-003_BIRLESIK_DOSYA_v1.md  |  34.755 byte
+│   ├── OWS-2026-003_BLOK_B_KAPANIS_LOGU.md  |  6.140 byte
+│   ├── OWS-2026-003_CARPINI_DUZELTME_PROMPTU.md  |  3.756 byte
+│   ├── OWS-2026-003_DENETIM_KILIT.md  |  4.576 byte
+│   ├── OWS-2026-003_DIL_CEVIRI_PROMPTU.md  |  3.951 byte
+│   ├── OWS-2026-003_EN_KK_DUZELTME_PROMPTU.md  |  5.061 byte
+│   ├── OWS-2026-003_HERODOT_IS_EMRI_CETVELI_v1.md  |  11.665 byte
+│   ├── OWS-2026-003_HERODOT_IS_EMRI_CETVELI_v2.md  |  13.119 byte
+│   ├── OWS-2026-003_KAMUSAL_YAYIN_PAKETI (2).md  |  6.877 byte
+│   ├── OWS-2026-003_KAMUSAL_YAYIN_PAKETI.md  |  6.755 byte
+│   ├── OWS-2026-003_KAMUSAL_YAYIN_PAKETI_EL.md  |  14.964 byte
+│   ├── OWS-2026-003_KAMUSAL_YAYIN_PAKETI_EN (3).md  |  7.911 byte
+│   ├── OWS-2026-003_KAMUSAL_YAYIN_PAKETI_EN.md  |  7.715 byte
+│   ├── OWS-2026-003_KAMUSAL_YAYIN_PAKETI_EN_v2.md  |  7.911 byte
+│   ├── OWS-2026-003_KAMUSAL_YAYIN_PAKETI_RU (3).md  |  14.120 byte
+│   ├── OWS-2026-003_KAMUSAL_YAYIN_PAKETI_RU.md  |  13.467 byte
+│   ├── OWS-2026-003_KAMUSAL_YAYIN_PAKETI_UK.md  |  13.322 byte
+│   ├── OWS-2026-003_KUNYE_DOGRULAMA_FINAL.md  |  27.330 byte
+│   ├── OWS-2026-003_MAKALE_KAMUSAL_EL.md  |  72.552 byte
+│   ├── OWS-2026-003_MAKALE_KAMUSAL_EN (2).md  |  41.668 byte
+│   ├── OWS-2026-003_MAKALE_KAMUSAL_EN.md  |  41.466 byte
+│   ├── OWS-2026-003_MAKALE_KAMUSAL_RU (1).md  |  65.873 byte
+│   ├── OWS-2026-003_MAKALE_KAMUSAL_RU.md  |  65.867 byte
+│   ├── OWS-2026-003_MAKALE_KAMUSAL_TR (3).md  |  39.227 byte
+│   ├── OWS-2026-003_MAKALE_KAMUSAL_TR.md  |  38.966 byte
+│   ├── OWS-2026-003_MAKALE_KAMUSAL_UK.md  |  63.787 byte
+│   ├── OWS-2026-003_MASTER_CETVEL_v3_KANONIK.md  |  72.387 byte
+│   ├── OWS-2026-003_MASTER_RESUME_v2.md  |  9.817 byte
+│   ├── OWS-2026-003_MASTER_RESUME_v3_YAZIM.md  |  11.324 byte
+│   ├── OWS-2026-003_OBYEDINENNOE_DOSYE_FINAL_RU.md  |  61.337 byte
+│   ├── OWS-2026-003_OMURGA_HARITASI_killpoint.md  |  11.695 byte
+│   ├── OWS-2026-003_RESUME_DEVIR.md  |  9.164 byte
+│   ├── OWS-2026-003_RESUME_DEVIR_SHEET.md  |  10.187 byte
+│   ├── OWS-2026-003_RESUME_DEVIR_v4.md  |  8.305 byte
+│   ├── OWS-2026-003_RESUME_DIL_FAZI.md  |  5.422 byte
+│   ├── OWS-2026-003_RESUME_SET_TAMAMLANDI.md  |  7.343 byte
+│   ├── OWS-2026-003_RESUME_v3_YAMA.md  |  5.507 byte
+│   ├── OWS-2026-003_RU_DECLENSION_PROMPTU.md  |  4.696 byte
+│   ├── OWS-2026-003_RU_KK_DUZELTME_PROMPTU.md  |  6.600 byte
+│   ├── OWS-2026-003_SIRA3_CEVIRI_PROMPTU.md  |  7.476 byte
+│   ├── OWS-2026-003_SIRA3_RU_PROMPTU_v2.md  |  6.030 byte
+│   ├── OWS-2026-003_T1_AKRABALIK_METIN_v1.md  |  10.487 byte
+│   ├── OWS-2026-003_T1_AKRABALIK_METIN_v2.md  |  12.172 byte
+│   ├── OWS-2026-003_T2_ORDA_PRAGMATIZMI_KAPANIS_LOGU.md  |  12.236 byte
+│   ├── OWS-2026-003_T2_ORDA_PRAGMATIZMI_METIN_v1.md  |  13.035 byte
+│   ├── OWS-2026-003_T3_MODERN_SOYLEM_KAPANIS_LOGU.md  |  10.745 byte
+│   ├── OWS-2026-003_T3_MODERN_SOYLEM_METIN_v1.md  |  12.608 byte
+│   ├── OWS-2026-003_T3_MODERN_SOYLEM_METIN_v2.md  |  14.566 byte
+│   ├── OWS-2026-003_T4_DANYLO_KAPANIS_LOGU.md  |  9.135 byte
+│   ├── OWS-2026-003_T4_GEC_MITEMLER_METIN_v1.md  |  14.746 byte
+│   ├── OWS-2026-003_T4_GEC_MITEMLER_METIN_v2.md  |  16.525 byte
+│   ├── OWS-2026-003_T4_NEVSKIY_KAPANIS_LOGU.md  |  6.702 byte
+│   ├── OWS-2026-003_TEYIT_KAPANIS_LOGU.md  |  13.724 byte
+│   ├── OWS-2026-003_YOL_HARITASI_MAKALE_FAZI.md  |  7.632 byte
+│   ├── SENTEZ_TASLAK4_KILITLERI_herodot_paketi.txt  |  8.582 byte
+│   └── SENTEZ_TASLAK4_KILITLERI_herodot_paketi_v2.txt  |  9.295 byte
+├── 06_OWS-ABD250_DisPolitika/  [34 dosya | 1.884.896 byte]
+│   ├── abd_dis_politika_tezi_arastirma.md  |  24.051 byte
+│   ├── ABD_Dis_Politikasi_1776-2026_FORENSIC_MASTER.md  |  103.439 byte
+│   ├── ABD_Dis_Politikasi_1776-2026_FORENSIC_MASTER_v2.md  |  103.446 byte
+│   ├── ABD_Dis_Politikasi_1776-2026_FORENSIC_MASTER_v2_temiz (1).md  |  103.446 byte
+│   ├── ABD_Dis_Politikasi_1776-2026_FORENSIC_MASTER_v2_temiz.md  |  103.446 byte
+│   ├── ABD_Dis_Politikasi_1776-2026_KAMU_REGISTER_TR.md  |  85.513 byte
+│   ├── OWS_ABD250_NEW_CHAT_UPLOAD_MANIFEST_2026-07-31_v1.md  |  2.673 byte
+│   ├── OWS_ABD250_S3_1801_1816_CLAUDE_GOREV_EMRI_v0.1.docx  |  54.648 byte
+│   ├── OWS_ABD250_S4_1816_1825_CLAUDE_GOREV_EMRI_v0.1.docx  |  57.555 byte
+│   ├── OWS-ABD250_01_RESUME_v1.0.md  |  10.368 byte
+│   ├── OWS-ABD250_C_Dosyasi_v0.1.md  |  6.832 byte
+│   ├── OWS-ABD250_C_Dosyasi_v0_2.md  |  16.473 byte
+│   ├── OWS-ABD250_GPT_MEKANIK-KONTROL_EMRI_v1.md  |  3.504 byte
+│   ├── OWS-ABD250_HERODOT_Kaynak_Sicili.md  |  45.821 byte
+│   ├── OWS-ABD250_HERODOT_Kaynak_Sicili_Tur2.md  |  49.617 byte
+│   ├── OWS-ABD250_HERODOT_S6_TUR_5_ENTEGRE_v1.md  |  213.273 byte
+│   ├── OWS-ABD250_HERODOT_S6_TUR_5_HAM_v1.md  |  206.341 byte
+│   ├── OWS-ABD250_HERODOT_SICIL_v1_ENTEGRE.md  |  50.701 byte
+│   ├── OWS-ABD250_Hijyen_ve_Protokol_Talimati_v1.md  |  5.662 byte
+│   ├── OWS-ABD250_KILIT_SONRASI_SICIL_v1_4.md  |  35.752 byte
+│   ├── OWS-ABD250_S0_1607-1775_v1.3_KILITLI.md  |  15.141 byte
+│   ├── OWS-ABD250_S0_1607-1775_v1_3_KILITLI.md  |  15.141 byte
+│   ├── OWS-ABD250_S1_1776-1787_v0.3_KILITLI.md  |  25.535 byte
+│   ├── OWS-ABD250_S1_1776-1787_v0_3_KILITLI.md  |  25.535 byte
+│   ├── OWS-ABD250_S2_1787-1801_v0.3_KILITLI.md  |  27.485 byte
+│   ├── OWS-ABD250_S2_1787-1801_v0_3_KILITLI.md  |  27.485 byte
+│   ├── OWS-ABD250_S3_1801-1816_v0_3_KILITLI.md  |  42.209 byte
+│   ├── OWS-ABD250_S4_1816-1825_v0_3.md  |  47.479 byte
+│   ├── OWS-ABD250_S4_1816-1825_v0_3_1.md  |  54.152 byte
+│   ├── OWS-ABD250_S4_1816-1825_v0_3_2.md  |  56.726 byte
+│   ├── OWS-ABD250_S4_1816-1825_v0_3_2_DENETCI_ONAYLI.md  |  56.763 byte
+│   ├── OWS-ABD250_S4_1816-1825_v0_3_2_KILITLI.md  |  57.809 byte
+│   ├── OWS-ABD250_S6_1841-1850_v0_2.md  |  63.879 byte
+│   └── OWS-ABD250_S6_1841-1850_v0_3_1.md  |  86.996 byte
+├── 07_OWS-AA_Kudus_Reagan/  [17 dosya | 366.093 byte]
+│   ├── OWS-AA-001_Jerusalem_el.md  |  36.331 byte
+│   ├── OWS-AA-001_Jerusalem_en.md  |  22.300 byte
+│   ├── OWS-AA-001_Jerusalem_ru.md  |  35.526 byte
+│   ├── OWS-AA-001_Jerusalem_uk.md  |  34.370 byte
+│   ├── OWS-AA-001_Kudus_2017-2018_MUHURLU_v1.1.md  |  18.130 byte
+│   ├── OWS-AA-001_Kudus_2017-2018_v1.2_MUHURLU.md  |  23.293 byte
+│   ├── OWS-AA-001_Kudus_tr.md  |  24.377 byte
+│   ├── OWS-AA-001-KAYNAK-DENETIM_2026-06-28.md  |  9.617 byte
+│   ├── OWS-AA-001-RT1-K0-EUKLEIDES_2026-06-28.md  |  4.569 byte
+│   ├── OWS-AA-001-RT1-K0-EUKLEIDES-BLIND_2026-06-28.md  |  5.420 byte
+│   ├── OWS-AA-001-RT1-K3-HERODOTOS_2026-06-28.md  |  5.517 byte
+│   ├── OWS-AA-001-SENTEZ-K3_2026-06-28.md  |  5.212 byte
+│   ├── OWS-AA-002_Reagan_1981-1986_MUHURLU_v1.1.md  |  21.732 byte
+│   ├── OWS-AA-002-EL.md  |  34.525 byte
+│   ├── OWS-AA-002-EN.md  |  20.259 byte
+│   ├── OWS-AA-002-RU.md  |  32.988 byte
+│   └── OWS-AA-002-UK.md  |  31.927 byte
+├── 07_Yeni/  [62 dosya | 123.936.124 byte]
+│   ├── 02_DOSYA1_Ortodoks_Kiev/  [19 dosya | 443.219 byte]
+│   │   ├── DOSYA1_birlestirme_on_envanteri_ve_plan.md  |  13.503 byte
+│   │   ├── DOSYA1_KATMAN2_2.0_envanter_Synthesius_ham (3).md  |  20.482 byte
+│   │   ├── DOSYA1_KATMAN2_2.0_envanter_Synthesius_ham.md  |  18.083 byte
+│   │   ├── DOSYA1_kaynak_yukseltme_envanteri_v0.md  |  11.455 byte
+│   │   ├── ortodoks-eksen_MASTER_v0.3.zip  |  12.874 byte
+│   │   ├── ortodoks-eksen_MASTER_v0.4.zip  |  14.082 byte
+│   │   ├── ortodoks-eksen_MASTER_v0.5.zip  |  14.516 byte
+│   │   ├── ortodoks-eksen_MASTER_v0.6.zip  |  16.619 byte
+│   │   ├── ortodoks-eksen_MASTER_v0.7.zip  |  19.517 byte
+│   │   ├── ortodoks-eksen_MASTER_v0.8.zip  |  20.453 byte
+│   │   ├── ortodoks-eksen_MASTER_v0.9.zip  |  23.510 byte
+│   │   ├── ortodoks-eksen_MASTER_v1.0.zip  |  24.735 byte
+│   │   ├── ortodoks-eksen_MASTER_v1.1.zip  |  28.167 byte
+│   │   ├── ortodoks-eksen_MASTER_v1.2.zip  |  29.923 byte
+│   │   ├── ortodoks-eksen_MASTER_v1.3.zip  |  32.338 byte
+│   │   ├── ortodoks-eksen_MASTER_v1.4.zip  |  33.828 byte
+│   │   ├── ortodoks-eksen_MASTER_v1.5.zip  |  34.154 byte
+│   │   ├── ortodoks-eksen_MASTER_v1.6.zip  |  35.849 byte
+│   │   └── ortodoks-eksen_MASTER_v1_7.zip  |  39.131 byte
+│   ├── 03_Teomonya/  [7 dosya | 159.563 byte]
+│   │   ├── TEOMONYA_MASTER_baslik_tracked.docx  |  15.155 byte
+│   │   ├── TEOMONYA_MASTER_IX_atifli_tracked.docx  |  28.615 byte
+│   │   ├── TEOMONYA_MASTER_IX_atifli_v2_accepted_onizleme.docx  |  24.391 byte
+│   │   ├── TEOMONYA_MASTER_IX_atifli_v2_tracked.docx  |  28.651 byte
+│   │   ├── TEOMONYA_MASTER_IX_dilim_tracked.docx  |  20.101 byte
+│   │   ├── TEOMONYA_MASTER_IX_tablolu_tracked.docx  |  27.191 byte
+│   │   └── TEOMONYA_MASTER_streamG_tracked_v3.docx  |  15.459 byte
+│   ├── 05_OWS-2026-003_Nevskiy/  [2 dosya | 156.036 byte]
+│   │   ├── nevskiy-danylo.zip  |  92.015 byte
+│   │   └── OWS-2026-003_YAZIM_PAKETI.zip  |  64.021 byte
+│   ├── 06_OWS-ABD250_DisPolitika/  [15 dosya | 28.865.136 byte]
+│   │   ├── abd_orijinaller_part_08_section3_sentez_038_to_059.zip  |  27.800.040 byte
+│   │   ├── abd_orijinaller_toplama_paketi.zip  |  28.648 byte
+│   │   ├── OWS_ABD250_DEVIR_PAKETI_2026-07-31_v1.zip  |  411.069 byte
+│   │   ├── OWS_ABD250_DEVIR_RESUME_SHEET_2026-07-31_v1.docx  |  40.458 byte
+│   │   ├── OWS_ABD250_HERODOT_S6_KAYNAK_ACILIM_TURU_5_GOREV_EMRI_v0_1.docx  |  57.674 byte
+│   │   ├── OWS_ABD250_NEW_CHAT_CONTEXT_PACK_v1.zip  |  107.838 byte
+│   │   ├── OWS-ABD250_00_Sozlesme_v1.1.md  |  5.022 byte
+│   │   ├── OWS-ABD250_00_Sozlesme_v1_1.md  |  5.022 byte
+│   │   ├── OWS-ABD250_HERODOT_Kaynak_Sicili.docx  |  34.444 byte
+│   │   ├── OWS-ABD250_HERODOT_Kaynak_Sicili_Tur2.docx  |  37.903 byte
+│   │   ├── OWS-ABD250_HERODOT_S6_TUR_5_HAM_v1.docx  |  127.328 byte
+│   │   ├── OWS-ABD250_S6_1841-1850_v0_1_BIRINCI_DENETIM.docx  |  41.465 byte
+│   │   ├── OWS-ABD250_S6_1841-1850_v0_2_IKINCI_DENETIM.docx  |  47.514 byte
+│   │   ├── OWS-ABD250_S6_1841-1850_v0_3_GERCEK.md  |  80.250 byte
+│   │   └── OWS-ABD250_S6_v0_3_KANONIKLESTIRME_BASLATMA_EMRI.docx  |  40.461 byte
+│   ├── 08_Masumiyet/  [3 dosya | 60.044 byte]
+│   │   ├── 01_Masumiyet_ETIKETLI (1).md  |  18.941 byte
+│   │   ├── 01_Masumiyet_ETIKETLI.md  |  17.948 byte
+│   │   └── fd24e9c6-63ef-447a-af38-dfd809f46268_1 - Masumiyet Dönemi İncelemesi.docx  |  23.155 byte
+│   ├── 12_Ajanlar_Filozoflar/  [1 dosya | 9.027 byte]
+│   │   └── EUKLEIDES_NEW_CHAT_PACKAGE_v1.0.zip  |  9.027 byte
+│   ├── 19_Baris_Aksu_Profil/  [2 dosya | 128.034 byte]
+│   │   ├── Baris_Aksu_Claude_Max_Profil_Paketi_v1_0.zip  |  127.648 byte
+│   │   └── CLAUDE MAX — BARIS AKSU SUPER PROFIL PAKETI — 31.07.2026-20260731T084257Z-1-001.zip  |  386 byte
+│   ├── 21_Kamu_Forensic_Dossier/  [1 dosya | 264.677 byte]
+│   │   └── dossiers-3-guncel.zip  |  264.677 byte
+│   ├── 22_OWS_Genel_Resume/  [1 dosya | 30.156 byte]
+│   │   └── OWS_master_matris.xlsx  |  30.156 byte
+│   ├── 23_Arayuz_Gorsel_Paketleri/  [7 dosya | 93.557.866 byte]
+│   │   ├── ows_gorsel_envanteri.md  |  97.818 byte
+│   │   ├── ows_gorsel_site_ready_compact.zip  |  67.627.685 byte
+│   │   ├── ows_intro_assets.zip  |  164.069 byte
+│   │   ├── ows_secili_9_gorsel.zip  |  23.217.225 byte
+│   │   ├── ows_sovyet_sanayilesmesi_6_onemli_gorsel.zip  |  1.464.071 byte
+│   │   ├── ows_sovyet_sanayilesmesi_secili_6_gorsel.zip  |  934.523 byte
+│   │   └── ows-favicon.zip  |  52.475 byte
+│   ├── 25_OWS-2026-005_Tanimama/  [1 dosya | 80.350 byte]
+│   │   └── sovyet-amerikan-transfer-005.zip  |  80.350 byte
+│   ├── 26_OWS_Traktor_Tank/  [2 dosya | 181.804 byte]
+│   │   ├── AhdinKuslari_Pilot_Package_v0.1.zip  |  108.085 byte
+│   │   └── protokol-17447-traktor-mu-tank-mi.zip  |  73.719 byte
+│   └── README_07_Yeni.txt  |  212 byte
+├── 08_Masumiyet/  [22 dosya | 660.102 byte]
+│   ├── 01_Masumiyet_3KUNYE_R3.md  |  3.561 byte
+│   ├── 01_Masumiyet_ACIK_KALEMLER_R3.md  |  8.775 byte
+│   ├── 01_Masumiyet_FINAL.md  |  46.068 byte
+│   ├── 01_Masumiyet_KAMU_TR_v10.1.md  |  30.825 byte
+│   ├── 01_Masumiyet_KAMU_TR_v10_1.md  |  30.825 byte
+│   ├── 01_Masumiyet_ONARILMIS.md  |  42.816 byte
+│   ├── 01_Masumiyet_R3_DOGRULAMA.md  |  12.822 byte
+│   ├── 01_Masumiyet_TEMIZ_TABAN.md  |  34.829 byte
+│   ├── 01_Masumiyet_YENIDEN_v1.md  |  20.648 byte
+│   ├── 01_Masumiyet_YENIDEN_v10.1.md  |  42.845 byte
+│   ├── 01_Masumiyet_YENIDEN_v10.md  |  38.817 byte
+│   ├── 01_Masumiyet_YENIDEN_v10_1_SEAL_ADAYI.md  |  45.071 byte
+│   ├── 01_Masumiyet_YENIDEN_v2.md  |  23.711 byte
+│   ├── 01_Masumiyet_YENIDEN_v3.md  |  24.487 byte
+│   ├── 01_Masumiyet_YENIDEN_v4.md  |  28.331 byte
+│   ├── 01_Masumiyet_YENIDEN_v5.md  |  29.435 byte
+│   ├── 01_Masumiyet_YENIDEN_v6.md  |  29.316 byte
+│   ├── 01_Masumiyet_YENIDEN_v7.1.md  |  36.584 byte
+│   ├── 01_Masumiyet_YENIDEN_v7.md  |  30.084 byte
+│   ├── 01_Masumiyet_YENIDEN_v8.md  |  31.414 byte
+│   ├── 01_Masumiyet_YENIDEN_v9.1.md  |  36.819 byte
+│   └── 01_Masumiyet_YENIDEN_v9.md  |  32.019 byte
+├── 09_Apokaliptik_Blok/  [32 dosya | 799.731 byte]
+│   ├── 02_Hezekiel_38-39_R1_KAYNAK_SICILI.md  |  9.451 byte
+│   ├── 02_Hezekiel_38-39_R2_TASLAK.md  |  25.196 byte
+│   ├── 02_Hezekiel_38-39_R3.1_TASLAK.md  |  34.329 byte
+│   ├── 02_Hezekiel_38-39_R3_2_TASLAK.md  |  37.139 byte
+│   ├── 02_Hezekiel_38-39_R3_3_SEAL_ADAYI (4).md  |  44.374 byte
+│   ├── 02_Hezekiel_38-39_R3_3_SEAL_ADAYI.md  |  42.341 byte
+│   ├── 02_Hezekiel_38-39_R3_TASLAK.md  |  30.955 byte
+│   ├── 02_Hezekiel_HER1-7_PIN.md  |  7.164 byte
+│   ├── 03_Hezekiel_R2_GOREV_DAGILIMI_ve_PROMPTLAR.md  |  11.457 byte
+│   ├── 05_KUNYE_DEVIR_PAKETI_APOKALIPTIK_BLOK.md  |  10.457 byte
+│   ├── 09_Gog_Magog_kaynak_avi_R2.md  |  16.307 byte
+│   ├── 09_Gog_Magog_R2_GOVDE.md  |  30.552 byte
+│   ├── 09_Gog_Magog_R3_1.md  |  32.445 byte
+│   ├── 09_Gog_Magog_R3_2.md  |  38.882 byte
+│   ├── 09_Gog_Magog_R3_2_1.md  |  39.354 byte
+│   ├── 10_Armageddon_kaynak_avi_R0.md  |  7.403 byte
+│   ├── 10_Armageddon_R2_GOVDE.md  |  25.263 byte
+│   ├── 10_Armageddon_R3_1.md  |  31.411 byte
+│   ├── 10_Armageddon_R3_2.md  |  32.491 byte
+│   ├── 13_Son_Isyan_R2_GOVDE.md  |  33.565 byte
+│   ├── 13_Son_Isyan_R3_1.md  |  39.618 byte
+│   ├── 13_Son_Isyan_R3_1_1.md  |  41.927 byte
+│   ├── 13_Son_Isyan_R3_2.md  |  51.523 byte
+│   ├── DENETIM_02_Hezekiel_Sorgulamasi.md  |  11.994 byte
+│   ├── DOSYA10_R0_ACILIS.md  |  7.987 byte
+│   ├── DOSYA10_R3_RAPOR_ve_R3_1_TALIMAT.md  |  9.998 byte
+│   ├── DOSYA13_R0_ACILIS.md  |  7.456 byte
+│   ├── DOSYA13_R3_YONETICI_REDTEAM.md  |  11.816 byte
+│   ├── DOSYA9_ADJUDIKASYON_R3_2_TALIMAT.md  |  12.114 byte
+│   ├── DOSYA9_R0_ACILIS.md  |  7.884 byte
+│   ├── DOSYA9_R3_YONETICI_REDTEAM.md  |  6.048 byte
+│   └── eskatoloji_kaynak_listesi.md  |  50.830 byte
+├── 12_Ajanlar_Filozoflar/  [31 dosya | 359.926 byte]
+│   ├── _pipeline.py  |  12.194 byte
+│   ├── 01_aristoteles.py  |  7.898 byte
+│   ├── 02_eukleides.py  |  9.124 byte
+│   ├── 03_eratosthenes.py  |  9.088 byte
+│   ├── 04_ARISTOTELES_FINAL_TUR_TALIMATI.md  |  7.107 byte
+│   ├── 04_zhuangzi.py  |  10.650 byte
+│   ├── 05_herodotos.py  |  9.237 byte
+│   ├── 06_sun_tzu.py  |  9.878 byte
+│   ├── 07_diyojen.py  |  7.555 byte
+│   ├── 08_marcus_aurelius.py  |  8.634 byte
+│   ├── AJAN_PROMPTLARI_STANDALONE.md  |  9.443 byte
+│   ├── copy_turnusol_paket.py  |  6.656 byte
+│   ├── HERODOTOS — Hedefli Veri Turu (B1–B5).md  |  22.543 byte
+│   ├── Herodotos  Putin OSINT Kaynak Avı (1990–2001).md  |  39.803 byte
+│   ├── herodotos_6tur_acik_uclar.md  |  10.711 byte
+│   ├── HERODOTOS_ABD_DIN_DEMOGRAFI_TURU.md  |  5.362 byte
+│   ├── HERODOTOS_GORSEL_AVI_OWS-2026-004.md  |  13.127 byte
+│   ├── HERODOTOS_incil_toponimi_ABD.md  |  39.575 byte
+│   ├── HERODOTOS_kaynak_avi_promptu_R2.md  |  8.586 byte
+│   ├── HERODOTOS_kaynak_avi_R2.md  |  25.956 byte
+│   ├── HERODOTOS_v8_LINK_DENETIM_KESIN.md  |  26.825 byte
+│   ├── herodotos-13-kunye-ve-sayfa-pinleri.md  |  19.166 byte
+│   ├── PROMPT_ARISTOTELES_13.md  |  5.417 byte
+│   ├── PROMPT_ARISTOTELES_13_FINAL.md  |  2.564 byte
+│   ├── PROMPT_B_13_R3_1_TALIMAT.md  |  4.868 byte
+│   ├── PROMPT_C13a_BYAMA_TALIMAT.md  |  3.116 byte
+│   ├── PROMPT_C13b_PIN_TURU.md  |  6.269 byte
+│   ├── PROMPT_HERODOTOS_13.md  |  4.225 byte
+│   ├── REDTEAM_1_EUKLEIDES_promptu.md  |  5.161 byte
+│   ├── REDTEAM_2_ZHUANGZI_promptu.md  |  5.080 byte
+│   └── REDTEAM_3_DENETCI_promptu.md  |  4.108 byte
+├── 13_Turnusol_Denetim/  [16 dosya | 144.619 byte]
+│   ├── 02-EK-H_Denetim_Cetveli_v1.md  |  13.040 byte
+│   ├── 02-EK-H_Hermenotik_Aksiyom_Denetim_Cetveli.md  |  13.040 byte
+│   ├── ARISTOTELES_DENETIM_PROMPTU_TURNUSOL.md  |  4.185 byte
+│   ├── bagimsiz_hakem_denetim.md  |  14.576 byte
+│   ├── CURSOR_TALIMATI_TURNUSOL_PAKET.md  |  2.048 byte
+│   ├── DENETIM_01_Hermeneutik_Aksiyomlar.md  |  6.782 byte
+│   ├── DENETIM_03_Tavuk_mu_Yumurta.md  |  9.237 byte
+│   ├── DENETIM_04_ON_CERCEVE.md  |  3.215 byte
+│   ├── DENETIM_HUKMU_uretici_ilk_tur.md  |  4.499 byte
+│   ├── DENETIM_RAPORU_04.md  |  14.695 byte
+│   ├── DENETIM_RAPORU_05.md  |  6.742 byte
+│   ├── dis_goz_denetim.md  |  19.554 byte
+│   ├── SYNTHESIUS_DEVIR_RESUME_v4_DENETIM_04.md  |  5.581 byte
+│   ├── SYNTHESIUS_DEVIR_RESUME_v6_TURNUSOL.md  |  6.053 byte
+│   ├── terminoloji_hakem_raporu.md  |  11.564 byte
+│   └── TURNUSOL_PROTOKOL_v1.md  |  9.808 byte
+├── 14_Astor/  [7 dosya | 153.959 byte]
+│   ├── ASTOR_Kus_Kontrol_Recetesi_ic_v2.md  |  11.570 byte
+│   ├── ASTOR_kus_kontrol_saha_tespit_raporu_v2.md  |  18.403 byte
+│   ├── ASTOR_RESUME_SHEET.md  |  12.119 byte
+│   ├── astor-kanit-zinciri-taramasi.md  |  49.354 byte
+│   ├── baykus.txt  |  3.329 byte
+│   ├── guvercin-kontrol-literatur-taramasi.md  |  36.659 byte
+│   └── saha_tespit_raporu.md  |  22.525 byte
+├── 15_Putin_Rusya/  [5 dosya | 243.943 byte]
+│   ├── putin_dresden_rapor.md  |  42.305 byte
+│   ├── putin_kaynak_matrisi.md  |  49.866 byte
+│   ├── putin_refakatciler_tur1.md  |  69.206 byte
+│   ├── putin_tam_yasam_karakteristigi.md  |  66.804 byte
+│   └── rusya-putin-derleme.md  |  15.762 byte
+├── 16_Ihtida_Arsiv_Izleri/  [11 dosya | 223.940 byte]
+│   ├── abd-protestan-ihtida-arsiv-izleri.md  |  26.019 byte
+│   ├── almanya-tehcir-arsiv-izleri.md  |  25.156 byte
+│   ├── almanya-tehcir-olusum-arsiv-izleri.md  |  25.889 byte
+│   ├── BOA_HR_SFR_3_240_51_ceviri_TR.md  |  10.412 byte
+│   ├── BOA_HR_SYS_00068_EkMetinler_Ceviri_TR.md  |  2.862 byte
+│   ├── boa-ihtida-protestan-arsiv-izleri.md  |  32.283 byte
+│   ├── britanya-protestan-ihtida-arsiv-izleri.md  |  22.692 byte
+│   ├── ingiltere-becayis-hipotezi-arsiv-izleri.md  |  11.948 byte
+│   ├── osmanli-hristiyan-ihtida-arsiv-izleri.md  |  16.928 byte
+│   ├── prusya-almanya-arsiv-izleri.md  |  22.711 byte
+│   └── rusya-hristiyan-cemaat-arsiv-izleri.md  |  27.040 byte
+├── 17_S100_Iki_Dosya/  [5 dosya | 70.819 byte]
+│   ├── S100-100-IKI-DOSYA-KURGU-v1.md  |  5.537 byte
+│   ├── S100-100-IKI-DOSYA-STORYBOARD-FORGE-v1.md  |  11.571 byte
+│   ├── S100-100-S400-FORGE-PROMPTS-v1.1.md  |  18.165 byte
+│   ├── S100-100-S400-FORGE-PROMPTS-v1.2.md  |  20.273 byte
+│   └── S100-100-S400-FORGE-PROMPTS-v1.md  |  15.273 byte
+├── 18_Mutfak_Trend_Rapana/  [17 dosya | 449.438 byte]
+│   ├── iskembe_corbasi_arastirma.md  |  30.041 byte
+│   ├── menemen_kelime_etimoloji_dosyasi.md  |  29.761 byte
+│   ├── MENEMEN_SENARYO_MASTER_v1.md  |  21.792 byte
+│   ├── MENEMEN_SENARYO_MASTER_v2_DETAYLI.md  |  24.281 byte
+│   ├── MENEMEN_TAM_KONUSMA_DOKUMU_07072026.md  |  138.877 byte
+│   ├── menemen_tarifleri_rapor.md  |  10.280 byte
+│   ├── menemen_tarihi_arastirmasi.md  |  33.072 byte
+│   ├── MONTAJ_GOREV_EMRI_MENEMEN_v2.md  |  7.380 byte
+│   ├── osmanli_soganli_yumurta_dosyasi.md  |  24.919 byte
+│   ├── PEYNIRLI_YUMURTA_HAM_MATERYAL.md  |  15.280 byte
+│   ├── PEYNIRLI_YUMURTA_TARIHCE_v1.md  |  13.304 byte
+│   ├── peynir_yumurta_arastirma.md  |  25.135 byte
+│   ├── rapana_finansal_dashboard (1).html  |  4.960 byte
+│   ├── rapana_finansal_dashboard.html  |  4.953 byte
+│   ├── tavuklu_terbiyeli_corba_tarama.md  |  42.488 byte
+│   ├── Trends_Turk_Yemekleri_Rusca_Talep.md  |  5.438 byte
+│   └── turk_mutfagi_arama_trendleri.md  |  17.477 byte
+├── 19_Baris_Aksu_Profil/  [7 dosya | 53.380 byte]
+│   ├── Backup-codes-barisaksu.1978.txt  |  471 byte
+│   ├── Baris_Mustafa_Aksu_Profil.txt  |  3.313 byte
+│   ├── gemini 15.05.txt  |  4.191 byte
+│   ├── GENEL_CLAUDE-IF_PROFIL-TRIYAJ-KARARI_2026-07-31_v1.md  |  5.829 byte
+│   ├── HAKEM_RAPORU_PRO_HERODOT_CLAUDE_20260728.md  |  9.996 byte
+│   ├── qwen_kullanici_profili_ve_talimatlari.md  |  9.753 byte
+│   └── qwen_profil_ve_talimat_v2_sentez.md  |  19.827 byte
+├── 20_Anna_Content/  [1 dosya | 8.727 byte]
+│   └── RESUME_SHEET_ANNA_CONTENT_07072026.md  |  8.727 byte
+├── 21_Kamu_Forensic/  [44 dosya | 2.685.407 byte]
+│   ├── CHANGELOG (1).md  |  15.334 byte
+│   ├── CHANGELOG.md  |  9.588 byte
+│   ├── CHANGELOG__4b5607f9.md  |  9.588 byte
+│   ├── CHANGELOG_link_dogrulama (1).md  |  5.271 byte
+│   ├── CHANGELOG_link_dogrulama (10).md  |  9.588 byte
+│   ├── CHANGELOG_link_dogrulama (3).md  |  5.703 byte
+│   ├── CHANGELOG_link_dogrulama (5).md  |  7.279 byte
+│   ├── CHANGELOG_link_dogrulama (7).md  |  8.810 byte
+│   ├── CHANGELOG_link_dogrulama.md  |  3.543 byte
+│   ├── CURRENT_STATUS_ONE_PAGE.md  |  1.749 byte
+│   ├── CURRENT_STATUS_ONE_PAGE_2.md  |  1.749 byte
+│   ├── DO_NOT_USE_LIST.md  |  2.897 byte
+│   ├── DO_NOT_USE_LIST_2.md  |  2.897 byte
+│   ├── FORENSIC_EN.md  |  57.039 byte
+│   ├── FORENSIC_EN__9b1f996e.md  |  108.123 byte
+│   ├── FORENSIC_MASTER_EN_v2.4.1.md  |  108.123 byte
+│   ├── FORENSIC_MASTER_v2.1_link_patched.md  |  104.886 byte
+│   ├── FORENSIC_MASTER_v2.2_link_patched.md  |  104.454 byte
+│   ├── FORENSIC_MASTER_v2.3_link_patched.md  |  104.609 byte
+│   ├── FORENSIC_MASTER_v2.4.1_dedup.md  |  104.758 byte
+│   ├── FORENSIC_MASTER_v2.4_link_patched (1).md  |  104.658 byte
+│   ├── FORENSIC_MASTER_v2.4_link_patched (2).md  |  104.593 byte
+│   ├── FORENSIC_MASTER_v2.4_link_patched (3).md  |  104.180 byte
+│   ├── FORENSIC_MASTER_v2.4_link_patched (5).md  |  104.863 byte
+│   ├── FORENSIC_MASTER_v2.4_link_patched.md  |  104.658 byte
+│   ├── FORENSIC_RU.md  |  184.324 byte
+│   ├── FORENSIC_TR__f16fa54c.md  |  104.758 byte
+│   ├── FORENSIC_TR_with-figures.md  |  110.872 byte
+│   ├── KAMU_EN__19c0ad00.md  |  87.258 byte
+│   ├── KAMU_REGISTER_EN.md  |  87.258 byte
+│   ├── KAMU_REGISTER_TR_v_sync (1).md  |  85.542 byte
+│   ├── KAMU_REGISTER_TR_v_sync (2).md  |  85.477 byte
+│   ├── KAMU_REGISTER_TR_v_sync (5).md  |  85.195 byte
+│   ├── KAMU_REGISTER_TR_v_sync.md  |  85.542 byte
+│   ├── KAMU_REGISTER_TR_v_sync__5_.md  |  85.195 byte
+│   ├── KAMU_RU (1).md  |  157.491 byte
+│   ├── KAMU_TR__192d1757.md  |  85.195 byte
+│   ├── KAMU_TR_with-figures.md  |  87.541 byte
+│   ├── TOPLU_MUHUR_BELGESI_v1.md  |  4.334 byte
+│   ├── TOPLU_MUHUR_BELGESI_v2 (1).md  |  7.587 byte
+│   ├── TOPLU_MUHUR_BELGESI_v2.md  |  6.521 byte
+│   ├── TOPLU_MUHUR_KAYDI_SOZLU_03072026.md  |  1.634 byte
+│   ├── yayina_hazirlik_raporu.md  |  19.100 byte
+│   └── yayina_hazirlik_raporu_v7.md  |  15.643 byte
+├── 22_OWS_Genel_Resume/  [113 dosya | 1.734.284 byte]
+│   ├── A B C D Bloğu — 13 Kalemin Tamamlanması.md  |  34.237 byte
+│   ├── A1_onarim_paketi_nesne_belirtili_olcut.md  |  9.051 byte
+│   ├── ai_gorev_brifingi.md  |  10.654 byte
+│   ├── B1_onarim_paketi_finansal_eksen_ucuncu_sinif.md  |  13.470 byte
+│   ├── B2_onarim_paketi_kanal_bagimsizligi.md  |  6.355 byte
+│   ├── belirsiz_cozum_raporu.md  |  7.412 byte
+│   ├── C_onarim_paketi_prior_art_ozgunluk.md  |  8.203 byte
+│   ├── cetvel_v4.md  |  40.579 byte
+│   ├── cetvel_v5.md  |  44.412 byte
+│   ├── cetvel_v5_1.md  |  30.635 byte
+│   ├── cetvel_v5_2.md  |  27.625 byte
+│   ├── cetvel_v5_3.md  |  15.163 byte
+│   ├── compass_artifact_wf-af38348a-14d5-4d90-9850-335a88d01654_text_markdown.md  |  39.703 byte
+│   ├── deep-research-report.md  |  18.096 byte
+│   ├── DEVIR_MASTER_v2_20260726.md  |  14.873 byte
+│   ├── DEVRALMA_NOTU_V16_SONRASI.md  |  11.071 byte
+│   ├── DUZELTME_OMURGASI_entegrasyon.md  |  8.473 byte
+│   ├── eksik_7_karar_sonuc.md  |  50.607 byte
+│   ├── Enis_Arastirma_Listesi.md  |  6.259 byte
+│   ├── entegrasyon_profili_v1.md  |  9.802 byte
+│   ├── extracted_account_summary.txt  |  9.002 byte
+│   ├── finansal_mimari_arastirma.md  |  33.715 byte
+│   ├── GENEL_PROFIL-ADAY-LISTESI-TAM-METIN_2026-07-31_v1.md  |  13.505 byte
+│   ├── gorev_a_sonuc_raporu.md  |  12.056 byte
+│   ├── gorev_c_e_raporu.md  |  16.493 byte
+│   ├── GOREV_HERODOT_kor_inceleme.md  |  2.897 byte
+│   ├── GOREV_Onsekiz_dosyalari_incelemesi.md  |  5.577 byte
+│   ├── HAKEM RAPORU — Tam Dosya İncelemesi.md  |  22.369 byte
+│   ├── hts_ozet.md  |  7.806 byte
+│   ├── kaynak_denetim_raporu.md  |  7.396 byte
+│   ├── KESIM_PLANI_v1.md  |  8.973 byte
+│   ├── klasor_kimliklendirme_faz1.md  |  6.282 byte
+│   ├── KOPRU_MODUL_CZ_iskelet_R0.md  |  16.043 byte
+│   ├── KOPRU_MODUL_CZ_istatistik_literatur_A2.md  |  42.213 byte
+│   ├── KOPRU_MODUL_CZ_kaynak_avi_R1.md  |  10.741 byte
+│   ├── KOPRU_MODUL_CZ_kaynak_avi_R2_ZOR_YOL.md  |  13.473 byte
+│   ├── KOPRU_MODUL_CZ_M3_konak_formu.md  |  13.756 byte
+│   ├── KOPRU_MODUL_CZ_R1.md  |  17.422 byte
+│   ├── KOPRU_MODUL_CZ_R2.md  |  27.938 byte
+│   ├── KOPRU_MODUL_CZ_R3.md  |  24.360 byte
+│   ├── KOPRU_MODUL_CZ_R4.md  |  21.008 byte
+│   ├── KOPRU_MODUL_CZ_R5 (2).md  |  17.932 byte
+│   ├── KOPRU_MODUL_CZ_R5.md  |  16.135 byte
+│   ├── KOPRU_MODUL_resume_sheet.md  |  9.557 byte
+│   ├── KOPRU_R1_R2_degisiklik_plani.md  |  6.668 byte
+│   ├── MASTER_KATMAN3_gecici_omurga_3.6_v3.1.md  |  4.395 byte
+│   ├── MONTAJ_RAPORU_v1.md  |  10.179 byte
+│   ├── MONTAJ_RAPORU_v1_1.md  |  11.040 byte
+│   ├── multi_ai_brief.md  |  13.264 byte
+│   ├── multi_ai_brief_v3.md  |  12.825 byte
+│   ├── NEW_CHAT_RESUME_MASTER.md  |  13.517 byte
+│   ├── NEW_CHAT_RESUME_MASTER_2.md  |  13.517 byte
+│   ├── NEW_CHAT_START_PROMPT(1).txt  |  2.785 byte
+│   ├── NEW_CHAT_START_PROMPT.txt  |  2.785 byte
+│   ├── OPEN_ITEMS_TURE_CHECKLIST.md  |  3.472 byte
+│   ├── OPEN_ITEMS_TURE_CHECKLIST_2.md  |  3.472 byte
+│   ├── Operator_Profil_Aktarim_Paketi_2026-07-31.md  |  10.499 byte
+│   ├── oturum_devir_kaydi.md  |  4.964 byte
+│   ├── ows_nevsky_danylo_CETVEL_v3_KILITLI.md  |  69.561 byte
+│   ├── OWS_RESUME_SHEET.md  |  12.247 byte
+│   ├── OWS_resume_sheet_2026-05-30.md  |  12.549 byte
+│   ├── OWS_resume_sheet_2026-05-31.md  |  15.363 byte
+│   ├── OWS_RESUME_SHEET_v2.md  |  16.256 byte
+│   ├── OWS_RESUME_SHEET_v3.md  |  11.734 byte
+│   ├── OWS_RESUME_SHEET_v4.md  |  12.053 byte
+│   ├── pilot_ana_teoriye_baglama.md  |  9.305 byte
+│   ├── PRO Çapraz Cevabı — Protokol Turu.md  |  8.840 byte
+│   ├── PRO_CAPRAZ_PAKETI_protokol_turu.txt  |  10.811 byte
+│   ├── rapor_iskeleti_v3.md  |  19.366 byte
+│   ├── restorasyon_nufus_raporu.md  |  34.635 byte
+│   ├── restorasyon_nufus_raporu_v2.md  |  22.558 byte
+│   ├── RESUME_OWS_2026-06-25.md  |  10.902 byte
+│   ├── RESUME_OWS_2026-06-27_v2.md  |  17.518 byte
+│   ├── RESUME_OWS_TAM_2026-06-27.md  |  21.840 byte
+│   ├── RESUME_SHEET.md  |  12.032 byte
+│   ├── RESUME_SHEET_bicim_turu (2).md  |  6.031 byte
+│   ├── RESUME_SHEET_bicim_turu.md  |  4.849 byte
+│   ├── RESUME_SHEET_bicim_turu_v2.md  |  6.156 byte
+│   ├── RESUME_SHEET_ceviri_muhur (2).md  |  10.228 byte
+│   ├── RESUME_SHEET_ceviri_muhur (5).md  |  11.299 byte
+│   ├── RESUME_SHEET_ceviri_muhur.md  |  9.885 byte
+│   ├── RESUME_SHEET_ceviri_muhur_v6.md  |  13.439 byte
+│   ├── RESUME_SHEET_ceviri_muhur_v7.md  |  17.789 byte
+│   ├── RESUME_SHEET_DENETIM.md  |  11.662 byte
+│   ├── RESUME_SHEET_DENETIM_ceviri.md  |  8.901 byte
+│   ├── RESUME_SHEET_DENETIM_devir.md  |  16.294 byte
+│   ├── RESUME_SHEET_OWS_2026-06-28.md  |  12.374 byte
+│   ├── RESUME_SHEET_OWS_2026-06-28_v2.md  |  16.519 byte
+│   ├── RESUME_SHEET_v3.md  |  28.051 byte
+│   ├── RESUME_SHEET_v4_MONTAJ.md  |  9.432 byte
+│   ├── RESUME_SHEET_YAZIM_CHATI.md  |  9.495 byte
+│   ├── RESUME_SHEET_YAZIM_CHATI_v2.md  |  4.452 byte
+│   ├── RESUME_SHEET_yeni_chat (2).md  |  11.321 byte
+│   ├── RESUME_SHEET_yeni_chat.md  |  9.374 byte
+│   ├── RESUME-OWS-2026-002.md  |  8.412 byte
+│   ├── saha-raporu-yapisal-yaklasim.md  |  44.736 byte
+│   ├── soru100-omurga-1911-2026 (1).md  |  18.586 byte
+│   ├── soru100-omurga-1911-2026.md  |  15.929 byte
+│   ├── sorun_tespit_cetveli.md  |  13.074 byte
+│   ├── TAKE_DOKUMU_v1.md  |  13.228 byte
+│   ├── TASLAK_4_2_ICERIK_REVIZE_20260726.md  |  22.484 byte
+│   ├── TASLAK_4_3_DIL_TURU_20260726.md  |  27.733 byte
+│   ├── TASLAK_4_TURE_KONTROL_SURUMU.txt  |  21.060 byte
+│   ├── teslim_metni_v5_3.md  |  13.759 byte
+│   ├── tez_girisi_ve_ana_arguman.txt  |  11.852 byte
+│   ├── transition_package.md  |  33.731 byte
+│   ├── TURE_GIZLI_BRIEF_ITEMS.md  |  2.547 byte
+│   ├── TURE_GIZLI_BRIEF_ITEMS_2.md  |  2.547 byte
+│   ├── YENI_CHAT_ACILIS_PROMPTU_20260726.md  |  1.381 byte
+│   ├── YENI_SOHBET_BASLATMA.md  |  1.536 byte
+│   ├── yontem_ozgunluk_arastirma.md  |  34.452 byte
+│   ├── YOUTUBE_PAKET.md  |  3.576 byte
+│   └── yunanca_program_v1.md  |  11.829 byte
+├── 23_Arayuz_Site_Demo/  [41 dosya | 20.641.528 byte]
+│   ├── abcfm-kurum-biyografisi.md  |  25.742 byte
+│   ├── arayuz-analizleri-suveys.el.md  |  33.300 byte
+│   ├── arayuz-analizleri-suveys.en.md  |  19.075 byte
+│   ├── arayuz-analizleri-suveys.md  |  18.153 byte
+│   ├── arayuz-analizleri-suveys.ru.md  |  31.128 byte
+│   ├── arayuz-analizleri-suveys.uk.md  |  30.305 byte
+│   ├── Beyanname (11).html  |  233.870 byte
+│   ├── Beyanname (9).html  |  281.756 byte
+│   ├── googlef18af0fd917b7a79.html  |  53 byte
+│   ├── Hata (12).html  |  3.895 byte
+│   ├── Hata (4).html  |  438 byte
+│   ├── index (1).html  |  692.366 byte
+│   ├── index (10).html  |  1.030.552 byte
+│   ├── index (11).html  |  1.041.257 byte
+│   ├── index (13).html  |  1.041.136 byte
+│   ├── index (14).html  |  1.061.396 byte
+│   ├── index (16).html  |  1.116.029 byte
+│   ├── index (17).html  |  1.217.033 byte
+│   ├── index (18).html  |  1.218.163 byte
+│   ├── index (2).html  |  768.419 byte
+│   ├── index (3).html  |  779.959 byte
+│   ├── index (4).html  |  786.310 byte
+│   ├── index (5).html  |  786.386 byte
+│   ├── index (6).html  |  1.056.588 byte
+│   ├── index (7).html  |  1.049.515 byte
+│   ├── index (8) (1).html  |  1.048.151 byte
+│   ├── index (9).html  |  1.048.154 byte
+│   ├── index.html  |  24.899 byte
+│   ├── index.html.html  |  690.320 byte
+│   ├── index__14_.html  |  1.061.396 byte
+│   ├── index_html.html  |  691.780 byte
+│   ├── indir.htm  |  886.650 byte
+│   ├── kronoloji.html  |  35.439 byte
+│   ├── license.html  |  397 byte
+│   ├── OWS_DEVIR_NOTU_ArayuzAnalizleri_2026-06-28.md  |  8.168 byte
+│   ├── OWS_dizayn_renk_masa_promptlari.md  |  14.126 byte
+│   ├── ows_intro.html  |  246.733 byte
+│   ├── OWS_link_tiklama_checklist.md  |  9.595 byte
+│   ├── panel.html  |  32.960 byte
+│   ├── Pinterest.html  |  494.856 byte
+│   └── sirket-dosyasi-demo.html  |  25.080 byte
+├── 24_Yaratilis_Mimari/  [3 dosya | 287.099 byte]
+│   ├── yaratilis_mimarisi_birlestirilmis.txt  |  226.036 byte
+│   ├── yaratilis_mimarisi_edit_v2.txt  |  25.595 byte
+│   └── Zincirsel Değerlendirme_ OWS Metodolojisinde Teknik Temel, Denetim ve Bağımlılık Zinciri.md  |  35.468 byte
+├── 25_OWS-2026-005_Tanimama/  [30 dosya | 541.675 byte]
+│   ├── OWS-004-GORSEL-PAKETI.md  |  29.634 byte
+│   ├── OWS-2026-005_FORENSIC_EL.md  |  47.077 byte
+│   ├── OWS-2026-005_FORENSIC_EN (1).md  |  24.596 byte
+│   ├── OWS-2026-005_FORENSIC_EN (2).md  |  24.671 byte
+│   ├── OWS-2026-005_FORENSIC_EN.md  |  20.658 byte
+│   ├── OWS-2026-005_FORENSIC_RU (1).md  |  44.934 byte
+│   ├── OWS-2026-005_FORENSIC_RU.md  |  44.705 byte
+│   ├── OWS-2026-005_FORENSIC_UK.md  |  43.916 byte
+│   ├── OWS-2026-005_KONTROL_NOTU_v1.md  |  10.828 byte
+│   ├── OWS-2026-005_PAKET_MUHUR.md  |  5.389 byte
+│   ├── OWS-2026-005_PAKET_MUHUR_v2.1.md  |  8.898 byte
+│   ├── OWS-2026-005_PAKET_MUHUR_v2.md  |  7.686 byte
+│   ├── OWS-2026-005_populer_EL (2).md  |  10.667 byte
+│   ├── OWS-2026-005_populer_EL.md  |  10.540 byte
+│   ├── OWS-2026-005_populer_EN (2).md  |  6.218 byte
+│   ├── OWS-2026-005_populer_EN.md  |  6.028 byte
+│   ├── OWS-2026-005_populer_RU (2).md  |  11.040 byte
+│   ├── OWS-2026-005_populer_RU.md  |  10.898 byte
+│   ├── OWS-2026-005_populer_TR (2).md  |  6.401 byte
+│   ├── OWS-2026-005_populer_TR.md  |  6.241 byte
+│   ├── OWS-2026-005_populer_UK (2).md  |  11.369 byte
+│   ├── OWS-2026-005_populer_UK.md  |  10.340 byte
+│   ├── OWS-2026-005_RESUME_DEVIR.md  |  7.154 byte
+│   ├── OWS-2026-005_RESUME_SHEET_DEVIR.md  |  7.689 byte
+│   ├── OWS-2026-005_tanimama_transfer_GOVDE_v0.2.md  |  9.560 byte
+│   ├── OWS-2026-005_tanimama_transfer_GOVDE_v0.3.md  |  16.948 byte
+│   ├── OWS-2026-005_tanimama_transfer_GOVDE_v0.4.md  |  24.512 byte
+│   ├── OWS-2026-005_tanimama_transfer_GOVDE_v0.6.1 (1).md  |  25.896 byte
+│   ├── OWS-2026-005_tanimama_transfer_GOVDE_v0.6.1.md  |  25.778 byte
+│   └── OWS-2026-005_tanimama_transfer_GOVDE_v0.6.md  |  21.404 byte
+├── 26_OWS_Traktor_Tank/  [7 dosya | 118.706 byte]
+│   ├── OWS_traktor_tank_RED-TEAM_OBJESI_v1.md  |  12.329 byte
+│   ├── OWS_traktor_tank_TEZ_v2.1.md  |  15.837 byte
+│   ├── OWS_traktor_tank_TEZ_v2.2.md  |  16.568 byte
+│   ├── OWS_traktor_tank_TEZ_v2.3.1.md  |  16.059 byte
+│   ├── OWS_traktor_tank_TEZ_v2.3.md  |  15.958 byte
+│   ├── OWS_traktor_tank_TEZ_v2.4.1.md  |  21.260 byte
+│   └── OWS_traktor_tank_TEZ_v2.4.md  |  20.695 byte
+├── 27_Dosya_H_Serisi/  [6 dosya | 49.587 byte]
+│   ├── ARISTOTELES_PROMPT_DOSYA_H.md  |  3.440 byte
+│   ├── DOSYA_H_SERI_HARITASI_v1.md  |  16.535 byte
+│   ├── DOSYA_H_SERI_HARITASI_v2.md  |  18.269 byte
+│   ├── KARAR_KAYDI_ve_DOSYA_H_R0.md  |  3.315 byte
+│   ├── MUHUR_BELGESI_DOSYA_H.md  |  2.475 byte
+│   └── SYNTHESIUS_DEVIR_RESUME_v5_DOSYA_H.md  |  5.553 byte
+├── 28_Audio_Transkript/  [3 dosya | 62.562 byte]
+│   ├── audio_report.md  |  18.389 byte
+│   ├── audio_transcript.json  |  38.712 byte
+│   └── TRANSKRIPT_RU_TR.md  |  5.461 byte
+├── 29_Yapistirilan_Metinler/  [8 dosya | 694.363 byte]
+│   ├── _chat.txt  |  485.291 byte
+│   ├── 1111111111111111111111111111111111111.txt  |  46.112 byte
+│   ├── Yapıştırılan metin.txt  |  27.846 byte
+│   ├── Вставленный текст (1).txt  |  23.312 byte
+│   ├── Вставленный текст (2).txt  |  60.092 byte
+│   ├── Вставленный текст (3).txt  |  7.578 byte
+│   ├── Вставленный текст (4).txt  |  17.880 byte
+│   └── Вставленный текст.txt  |  26.252 byte
+├── 99_Diger/  [7 dosya | 768.375 byte]
+│   ├── _kategori_raporu.md  |  105.239 byte
+│   ├── _uygulama_raporu.md  |  4.940 byte
+│   ├── 2ef062e2-321c-11f1-9a54-1a2030250176.xml  |  580.565 byte
+│   ├── 5A80A783-E54A-4E5F-80AE-7131D0689D77.html  |  60.933 byte
+│   ├── Hata.html  |  618 byte
+│   ├── ows_orijinal_belge_taramalari.md  |  15.571 byte
+│   └── README.txt  |  509 byte
+└── 00_AGAC_TAM_BYTES.txt  |  48.989 byte
+
+================================================================================
+TOPLAM DOSYA: 872
+TOPLAM BYTE : 165.476.709
+TOPLAM MB   : 157,81
+================================================================================

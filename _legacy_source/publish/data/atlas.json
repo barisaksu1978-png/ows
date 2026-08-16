@@ -1,0 +1,15 @@
+{
+  "items": [
+    {
+      "id": "eastern-question-1886",
+      "titleKey": "atlas.card.eastern_question.title",
+      "bodyKey": "atlas.card.eastern_question.body",
+      "period": "1886",
+      "source": "Edward Stanford, London",
+      "image": "assets/maps/eastern-question-1886.jpg",
+      "risk": "low",
+      "relatedDossiers": ["orthodox-axis"],
+      "contentFile": "content/atlas/eastern-question-1886.json"
+    }
+  ]
+}

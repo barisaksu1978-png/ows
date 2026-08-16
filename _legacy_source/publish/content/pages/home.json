@@ -1,0 +1,44 @@
+{
+  "id": "home",
+  "labelKey": "home.label",
+  "titleKey": "home.title",
+  "quoteKey": "home.claim",
+  "leadKey": "home.lead",
+  "cards": [
+    {
+      "full": true,
+      "titleKey": "home.not_site.title",
+      "items": [
+        "home.not_site.item_1",
+        "home.not_site.item_2",
+        "home.not_site.item_3",
+        "home.not_site.item_4",
+        "home.not_site.item_5",
+        "home.not_site.item_6"
+      ]
+    },
+    {
+      "titleKey": "home.preview.method.title",
+      "bodyKey": "home.preview.method.body",
+      "tags": [
+        "method.tag.fact",
+        "method.tag.inference",
+        "method.tag.hypothesis",
+        "method.tag.speculation",
+        "method.tag.unverified"
+      ]
+    },
+    {
+      "titleKey": "home.preview.dossiers.title",
+      "bodyKey": "home.preview.dossiers.body"
+    },
+    {
+      "titleKey": "home.preview.atlas.title",
+      "bodyKey": "home.preview.atlas.body"
+    },
+    {
+      "titleKey": "home.preview.human_ai.title",
+      "bodyKey": "home.preview.human_ai.body"
+    }
+  ]
+}

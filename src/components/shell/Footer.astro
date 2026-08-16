@@ -1,0 +1,17 @@
+---
+import type { UiStrings } from '../../i18n';
+
+interface Props {
+  t: UiStrings;
+}
+
+const { t } = Astro.props;
+---
+
+<footer class="app-footer">
+  <p>{t['footer.tagline']}</p>
+  <p>{t['footer.note']}</p>
+  <p class="footer-contact">
+    {t['footer.contact']}: <a href="mailto:info@openwarstudies.org">info@openwarstudies.org</a>
+  </p>
+</footer>

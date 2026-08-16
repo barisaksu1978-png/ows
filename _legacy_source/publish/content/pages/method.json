@@ -1,0 +1,32 @@
+{
+  "id": "method",
+  "labelKey": "method.label",
+  "titleKey": "method.title",
+  "leadKey": "method.lead",
+  "cards": [
+    {
+      "full": true,
+      "titleKey": "method.card.tags.title",
+      "bodyKey": "method.card.tags.body",
+      "tagDesc": [
+        { "term": "method.tag.fact", "desc": "method.tag.fact.description" },
+        { "term": "method.tag.inference", "desc": "method.tag.inference.description" },
+        { "term": "method.tag.hypothesis", "desc": "method.tag.hypothesis.description" },
+        { "term": "method.tag.speculation", "desc": "method.tag.speculation.description" },
+        { "term": "method.tag.unverified", "desc": "method.tag.unverified.description" }
+      ]
+    },
+    {
+      "titleKey": "method.card.red_team.title",
+      "bodyKey": "method.card.red_team.body"
+    },
+    {
+      "titleKey": "method.card.sources.title",
+      "bodyKey": "method.card.sources.body"
+    },
+    {
+      "titleKey": "method.card.revision.title",
+      "bodyKey": "method.card.revision.body"
+    }
+  ]
+}

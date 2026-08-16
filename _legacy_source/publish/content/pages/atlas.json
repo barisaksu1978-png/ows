@@ -1,0 +1,16 @@
+{
+  "id": "atlas",
+  "labelKey": "atlas.label",
+  "titleKey": "atlas.title",
+  "leadKey": "atlas.lead",
+  "cards": [
+    {
+      "titleKey": "atlas.card.orthodox_axis.title",
+      "bodyKey": "atlas.card.orthodox_axis.body"
+    },
+    {
+      "titleKey": "atlas.card.future_layers.title",
+      "bodyKey": "atlas.card.future_layers.body"
+    }
+  ]
+}

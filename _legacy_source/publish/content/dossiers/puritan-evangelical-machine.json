@@ -1,0 +1,31 @@
+{
+  "id": "puritan-evangelical-machine",
+  "code": "OWS-2026-003",
+  "status": "under_review",
+  "version": "0.1",
+  "risk": "high",
+  "evidence": "mixed",
+  "redTeam": "pending",
+  "updated": "2026-06-01",
+  "titleKey": "dossiers.card.puritan.title",
+  "summaryKey": "dossiers.card.puritan.body",
+  "tags": ["Puritan", "Evangelical", "Political Theology"],
+  "relatedMaps": [],
+  "sections": [
+    {
+      "type": "narrative",
+      "titleKey": "dossiers.lead",
+      "bodyKey": "dossiers.card.puritan.body"
+    },
+    {
+      "type": "evidence",
+      "titleKey": "method.card.sources.title",
+      "items": []
+    },
+    {
+      "type": "red-team",
+      "titleKey": "method.card.red_team.title",
+      "items": []
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "routes": [
+    { "id": "home", "labelKey": "nav.home", "href": "#home" },
+    { "id": "method", "labelKey": "nav.method", "href": "#method" },
+    { "id": "dossiers", "labelKey": "nav.dossiers", "href": "#dossiers" },
+    { "id": "atlas", "labelKey": "nav.atlas", "href": "#atlas" },
+    { "id": "archive", "labelKey": "nav.archive", "href": "#archive" },
+    { "id": "human-ai", "labelKey": "nav.human_ai", "href": "#human-ai" },
+    { "id": "about", "labelKey": "nav.about", "href": "#about" }
+  ]
+}

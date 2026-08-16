@@ -1,0 +1,47 @@
+---
+import type { UiStrings } from '../../i18n';
+
+interface Props {
+  t: UiStrings;
+}
+
+const { t } = Astro.props;
+
+const modes = [
+  { id: 'system', glyph: '◐' },
+  { id: 'light', glyph: '☀' },
+  { id: 'dark', glyph: '☾' },
+  { id: 'sepia', glyph: '◎' },
+] as const;
+---
+
+<div class="tool-menu theme-menu" data-theme-switcher>
+  <button
+    type="button"
+    class="tool-menu__trigger theme-menu__trigger"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-label={t['theme.aria_label']}
+    title={t['theme.aria_label']}
+  >
+    <span class="theme-menu__current" data-theme-current aria-hidden="true">☀</span>
+  </button>
+  <div class="tool-menu__panel" role="menu" aria-label={t['theme.aria_label']}>
+    {
+      modes.map(({ id, glyph }) => (
+        <button
+          type="button"
+          class="tool-menu__item theme-btn"
+          role="menuitem"
+          data-theme-pick={id}
+          data-label-auto={id === 'system' ? t['theme.system'] : undefined}
+          aria-pressed="false"
+          title={t[`theme.${id}`]}
+        >
+          <span class="tool-menu__glyph" aria-hidden="true">{glyph}</span>
+          <span class="tool-menu__label">{t[`theme.${id}`]}</span>
+        </button>
+      ))
+    }
+  </div>
+</div>

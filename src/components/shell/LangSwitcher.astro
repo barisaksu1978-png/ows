@@ -1,0 +1,49 @@
+---
+import { LOCALES, type Locale } from '../../i18n';
+import { getLocaleSwitchUrl } from '../../i18n/routes';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const names: Record<Locale, string> = {
+  tr: 'Türkçe',
+  en: 'English',
+  ru: 'Русский',
+  uk: 'Українська',
+  el: 'Ελληνικά',
+};
+const pathname = Astro.url.pathname;
+const current = locale as Locale;
+---
+
+<div class="tool-menu lang-menu">
+  <button
+    type="button"
+    class="tool-menu__trigger lang-menu__trigger"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-label={names[current]}
+    title={names[current]}
+  >
+    <img class="tool-menu__flag-img" src={`/flags/${current}.png`} alt="" width="22" height="16" />
+  </button>
+  <div class="tool-menu__panel" role="menu" aria-label="Language">
+    {
+      LOCALES.map((loc) => (
+        <a
+          class:list={['tool-menu__item', { on: loc === current }]}
+          href={getLocaleSwitchUrl(loc, pathname)}
+          hreflang={loc}
+          lang={loc}
+          role="menuitem"
+          title={names[loc]}
+        >
+          <img class="tool-menu__flag-img" src={`/flags/${loc}.png`} alt="" width="22" height="16" />
+          <span class="tool-menu__label">{names[loc]}</span>
+        </a>
+      ))
+    }
+  </div>
+</div>

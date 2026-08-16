@@ -1,0 +1,10 @@
+---
+import DossierDetailPage from '../../../../components/pages/DossierDetailPage.astro';
+import { dossierStaticPaths } from '../../../../lib/dossiers';
+
+export const getStaticPaths = dossierStaticPaths;
+
+const { slug } = Astro.params;
+---
+
+<DossierDetailPage slug={slug!} />
