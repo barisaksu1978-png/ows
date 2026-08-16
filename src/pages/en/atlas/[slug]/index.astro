@@ -1,8 +1,8 @@
 ---
 import AtlasDetailPage from '../../../../components/pages/AtlasDetailPage.astro';
-import { atlasStaticPaths } from '../../../../lib/atlas';
+import { atlasStaticPathsForLocale } from '../../../../lib/atlas';
 
-export const getStaticPaths = atlasStaticPaths;
+export const getStaticPaths = atlasStaticPathsForLocale('en');
 
 const { slug } = Astro.params;
 ---

@@ -14,7 +14,7 @@ const routes = [
     up: '../../../../',
     isDynamic: true,
     component: 'DossierDetailPage',
-    staticPaths: 'dossierStaticPaths',
+    staticPaths: 'dossierStaticPathsForLocale',
     lib: 'dossiers',
   },
   { file: 'atlas/index.astro', comp: 'AtlasPage', up: '../../../' },
@@ -23,7 +23,7 @@ const routes = [
     up: '../../../../',
     isDynamic: true,
     component: 'AtlasDetailPage',
-    staticPaths: 'atlasStaticPaths',
+    staticPaths: 'atlasStaticPathsForLocale',
     lib: 'atlas',
   },
   { file: 'archive/index.astro', comp: 'ArchivePage', up: '../../../' },
@@ -37,7 +37,7 @@ for (const loc of locales) {
     const dir = path.join(root, loc, path.dirname(r.file));
     fs.mkdirSync(dir, { recursive: true });
     const content = r.isDynamic
-      ? `---\nimport ${r.component} from '${r.up}components/pages/${r.component}.astro';\nimport { ${r.staticPaths} } from '${r.up}lib/${r.lib}';\n\nexport const getStaticPaths = ${r.staticPaths};\n\nconst { slug } = Astro.params;\n---\n\n<${r.component} slug={slug!} />\n`
+      ? `---\nimport ${r.component} from '${r.up}components/pages/${r.component}.astro';\nimport { ${r.staticPaths} } from '${r.up}lib/${r.lib}';\n\nexport const getStaticPaths = ${r.staticPaths}('${loc}');\n\nconst { slug } = Astro.params;\n---\n\n<${r.component} slug={slug!} />\n`
       : `---\nimport Page from '${r.up}components/pages/${r.comp}.astro';\n---\n\n<Page />\n`;
     fs.writeFileSync(path.join(root, loc, r.file), content);
     count++;

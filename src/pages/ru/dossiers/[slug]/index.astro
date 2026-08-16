@@ -1,8 +1,8 @@
 ---
 import DossierDetailPage from '../../../../components/pages/DossierDetailPage.astro';
-import { dossierStaticPaths } from '../../../../lib/dossiers';
+import { dossierStaticPathsForLocale } from '../../../../lib/dossiers';
 
-export const getStaticPaths = dossierStaticPaths;
+export const getStaticPaths = dossierStaticPathsForLocale('ru');
 
 const { slug } = Astro.params;
 ---

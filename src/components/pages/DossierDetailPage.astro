@@ -8,9 +8,11 @@ import type { ImageMetadata } from 'astro';
 import {
   getDossierEntry,
   getRegisterLinks,
+  listDossierLocales,
   pickLocalized,
   MAP_SLUG_LABELS,
 } from '../../lib/dossiers';
+import { getAtlasEntry } from '../../lib/atlas';
 
 const dossierImages = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/dossiers/*.{jpg,jpeg,png,webp,gif,tif,tiff}'
@@ -26,7 +28,7 @@ const t = getUi(locale);
 
 const entry = await getDossierEntry(slug, locale);
 if (!entry) {
-  return Astro.redirect(getRelativeLocaleUrl(locale, '/dossiers/'));
+  throw new Error(`Missing dossier content for ${slug} in locale ${locale}`);
 }
 
 const { Content } = await render(entry);
@@ -41,14 +43,19 @@ const caption = data.imageCaption ? pickLocalized(data.imageCaption, locale) : n
 
 const title = pickLocalized(data.title, locale);
 const summary = pickLocalized(data.summary, locale);
-const registers = await getRegisterLinks(slug);
+const hreflangLocales = await listDossierLocales(slug);
+const registers = await getRegisterLinks(slug, locale);
+const relatedMaps = [];
+for (const mapSlug of data.relatedMaps) {
+  if (await getAtlasEntry(mapSlug, locale)) relatedMaps.push(mapSlug);
+}
 const updated = data.updated.toLocaleDateString(
   locale === 'tr' ? 'tr-TR' : locale === 'el' ? 'el-GR' : locale === 'ru' ? 'ru-RU' : locale === 'uk' ? 'uk-UA' : 'en-GB',
   { year: 'numeric', month: 'long', day: 'numeric' },
 );
 ---
 
-<BaseLayout title={`${title} · ${t['brand.name']}`} description={summary}>
+<BaseLayout title={`${title} · ${t['brand.name']}`} description={summary} hreflangLocales={hreflangLocales}>
   <article id="route-root" class="page dossier-detail dossier-detail--portal">
     <p class="page-label">{t['dossiers.label']}</p>
 
@@ -109,12 +116,12 @@ const updated = data.updated.toLocaleDateString(
     }
 
     {
-      data.relatedMaps.length > 0 && (
+      relatedMaps.length > 0 && (
         <section class="dossier-related">
           <h2 class="dossier-related-title">{t['dossiers.meta.maps']}</h2>
           <ul class="dossier-related-list">
             {
-              data.relatedMaps.map((mapSlug) => {
+              relatedMaps.map((mapSlug) => {
                 const labelKey = MAP_SLUG_LABELS[mapSlug];
                 const label = labelKey ? t[labelKey] : mapSlug;
                 return (
