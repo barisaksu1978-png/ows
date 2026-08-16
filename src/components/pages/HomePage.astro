@@ -111,6 +111,7 @@ for (const baseSlug of MANSET_ORDER) {
 
 <BaseLayout title={formatDocumentTitle(t['home.title'], t['brand.name'])}>
   <article id="route-root" class="page page--home">
+    <h1 class="sr-only">{t['home.title']}</h1>
     <section
       class="home-manset home-manset--slider home-manset--dossiers"
       aria-roledescription="carousel"
@@ -148,9 +149,9 @@ for (const baseSlug of MANSET_ORDER) {
                   <span aria-hidden="true"> · </span>
                   <span>{slide.code}</span>
                 </p>
-                <h1 class="home-manset__headline" id={i === 0 ? 'home-manset-title' : undefined}>
+                <h2 class="home-manset__headline" id={i === 0 ? 'home-manset-title' : undefined}>
                   {slide.title}
-                </h1>
+                </h2>
               </div>
             </a>
           ))

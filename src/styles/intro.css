@@ -236,7 +236,7 @@
   margin-bottom: 1rem;
 }
 
-.scr h1 {
+.scr .intro-title {
   font-family: var(--elegant);
   font-weight: 500;
   font-style: italic;
