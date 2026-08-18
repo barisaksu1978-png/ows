@@ -1,6 +1,6 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
-import type { UiStrings } from '../../i18n';
+import type { Locale, UiStrings } from '../../i18n';
 import LangSwitcher from './LangSwitcher.astro';
 import ThemeSwitcher from './ThemeSwitcher.astro';
 import owsLogo from '../../assets/ows-owl.png';
@@ -8,9 +8,10 @@ import owsLogo from '../../assets/ows-owl.png';
 interface Props {
   t: UiStrings;
   locale: string;
+  availableLocales?: Locale[];
 }
 
-const { t, locale } = Astro.props;
+const { t, locale, availableLocales } = Astro.props;
 
 const topBarItems = [
   { key: 'nav.home' as const, path: '/', id: 'home' },
@@ -87,7 +88,7 @@ function isActive(path: string): boolean {
     </nav>
     <div class="app-header-tools">
       <ThemeSwitcher t={t} />
-      <LangSwitcher locale={locale} />
+      <LangSwitcher locale={locale} availableLocales={availableLocales} />
     </div>
   </div>
 </header>

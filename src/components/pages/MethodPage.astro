@@ -1,12 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getUi } from '../../i18n';
+import { formatDocumentTitle, getUi } from '../../i18n';
 
 const t = getUi(Astro.currentLocale ?? 'tr');
 const tags = ['fact', 'inference', 'hypothesis', 'speculation', 'unverified'] as const;
 ---
 
-<BaseLayout>
+<BaseLayout title={formatDocumentTitle(t['method.title'], t['brand.name'])} description={t['method.lead']}>
   <article id="route-root" class="page">
     <p class="page-label">{t['method.label']}</p>
     <h1>{t['method.title']}</h1>

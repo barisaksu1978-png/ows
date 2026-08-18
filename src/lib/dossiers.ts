@@ -1,6 +1,6 @@
 import { getCollection, getEntry } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import type { Locale } from '../i18n';
+import { LOCALES, type Locale } from '../i18n';
 
 export type DossierEntry = CollectionEntry<'dossiers'>;
 
@@ -20,9 +20,36 @@ export async function listDossierSlugs(): Promise<string[]> {
   return [...slugs].sort();
 }
 
-export async function dossierStaticPaths() {
-  const slugs = await listDossierSlugs();
-  return slugs.map((slug) => ({ params: { slug } }));
+let dossierIdIndex: Set<string> | undefined;
+
+async function knownDossierIds(): Promise<Set<string>> {
+  if (!dossierIdIndex) {
+    const entries = await getCollection('dossiers');
+    dossierIdIndex = new Set(entries.map((e) => e.id));
+  }
+  return dossierIdIndex;
+}
+
+export async function listDossierSlugsForLocale(locale: string): Promise<string[]> {
+  const ids = await knownDossierIds();
+  const slugs = new Set<string>();
+  for (const id of ids) {
+    if (id.endsWith(`/${locale}`)) slugs.add(parseDossierSlug(id));
+  }
+  return [...slugs].sort();
+}
+
+export async function listDossierLocales(slug: string): Promise<Locale[]> {
+  const ids = await knownDossierIds();
+  return LOCALES.filter((loc) => ids.has(dossierEntryId(slug, loc)));
+}
+
+/** Static paths for one locale folder: only slugs that have that locale file. */
+export function dossierStaticPathsForLocale(locale: string) {
+  return async () => {
+    const slugs = await listDossierSlugsForLocale(locale);
+    return slugs.map((slug) => ({ params: { slug } }));
+  };
 }
 
 type LocalizedField = {
@@ -43,14 +70,11 @@ export async function getDossierEntry(
   slug: string,
   locale: string,
 ): Promise<DossierEntry | null> {
-  const localesToTry: string[] =
-    locale === 'tr' ? ['tr'] : [locale, 'tr'];
-
-  for (const loc of localesToTry) {
-    const entry = await getEntry('dossiers', dossierEntryId(slug, loc));
-    if (entry) return entry;
-  }
-  return null;
+  const id = dossierEntryId(slug, locale);
+  const ids = await knownDossierIds();
+  if (!ids.has(id)) return null;
+  const entry = await getEntry('dossiers', id);
+  return entry ?? null;
 }
 
 /** Map relatedMaps slug → ui.json atlas card key */
@@ -91,16 +115,25 @@ export interface RegisterLinks {
   forensicSlug: string;
   popularSlug: string;
 }
-export async function getRegisterLinks(slug: string): Promise<RegisterLinks> {
+export async function getRegisterLinks(
+  slug: string,
+  locale: string,
+): Promise<RegisterLinks> {
   const groups = await listDossierGroups();
   const isPopular = slug.endsWith('-popular');
   const base = isPopular ? slug.slice(0, -'-popular'.length) : slug;
   const group = groups.find((g) => g.baseSlug === base);
+  const forensicSlug = base;
+  const popularSlug = `${base}-popular`;
+  const hasPopular =
+    Boolean(group?.hasPopular) &&
+    (await getDossierEntry(popularSlug, locale)) != null &&
+    (await getDossierEntry(forensicSlug, locale)) != null;
   return {
-    hasPopular: group?.hasPopular ?? false,
+    hasPopular,
     isPopular,
-    forensicSlug: base,
-    popularSlug: `${base}-popular`,
+    forensicSlug,
+    popularSlug,
   };
 }
 

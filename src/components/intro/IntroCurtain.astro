@@ -12,7 +12,7 @@ interface Props {
 const { t } = Astro.props;
 ---
 
-<div id="intro-curtain" aria-hidden="true">
+<div id="intro-curtain">
   <div class="icv-curt icv-curt-l"></div>
   <div class="icv-curt icv-curt-r"></div>
   <div class="icv-stage">
@@ -30,7 +30,7 @@ const { t } = Astro.props;
     </div>
     <div class="intro-content">
       <div class="scr-label">{t['intro.label']}</div>
-      <h1>{t['intro.title']}</h1>
+      <p class="intro-title">{t['intro.title']}</p>
       <p class="intro-sub">{t['intro.subtitle']}</p>
     </div>
     <div class="intro-bottom">

@@ -1,6 +1,6 @@
 import { getCollection, getEntry } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import type { Locale } from '../i18n';
+import { LOCALES, type Locale } from '../i18n';
 import { pickLocalized } from './dossiers';
 
 export type AtlasEntry = CollectionEntry<'atlas'>;
@@ -20,23 +20,47 @@ export async function listAtlasSlugs(): Promise<string[]> {
   return [...slugs].sort();
 }
 
-export async function atlasStaticPaths() {
-  const slugs = await listAtlasSlugs();
-  return slugs.map((slug) => ({ params: { slug } }));
+let atlasIdIndex: Set<string> | undefined;
+
+async function knownAtlasIds(): Promise<Set<string>> {
+  if (!atlasIdIndex) {
+    const entries = await getCollection('atlas');
+    atlasIdIndex = new Set(entries.map((e) => e.id));
+  }
+  return atlasIdIndex;
+}
+
+export async function listAtlasSlugsForLocale(locale: string): Promise<string[]> {
+  const ids = await knownAtlasIds();
+  const slugs = new Set<string>();
+  for (const id of ids) {
+    if (id.endsWith(`/${locale}`)) slugs.add(parseAtlasSlug(id));
+  }
+  return [...slugs].sort();
+}
+
+export async function listAtlasLocales(slug: string): Promise<Locale[]> {
+  const ids = await knownAtlasIds();
+  return LOCALES.filter((loc) => ids.has(atlasEntryId(slug, loc)));
+}
+
+/** Static paths for one locale folder: only slugs that have that locale file. */
+export function atlasStaticPathsForLocale(locale: string) {
+  return async () => {
+    const slugs = await listAtlasSlugsForLocale(locale);
+    return slugs.map((slug) => ({ params: { slug } }));
+  };
 }
 
 export async function getAtlasEntry(
   slug: string,
   locale: string,
 ): Promise<AtlasEntry | null> {
-  const localesToTry: string[] =
-    locale === 'tr' ? ['tr'] : [locale, 'tr'];
-
-  for (const loc of localesToTry) {
-    const entry = await getEntry('atlas', atlasEntryId(slug, loc));
-    if (entry) return entry;
-  }
-  return null;
+  const id = atlasEntryId(slug, locale);
+  const ids = await knownAtlasIds();
+  if (!ids.has(id)) return null;
+  const entry = await getEntry('atlas', id);
+  return entry ?? null;
 }
 
 export type AtlasCard = {

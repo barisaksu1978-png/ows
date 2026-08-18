@@ -1,12 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getUi } from '../../i18n';
+import { formatDocumentTitle, getUi } from '../../i18n';
 
 const t = getUi(Astro.currentLocale ?? 'tr');
 const cards = ['shelves', 'version_memory', 'quarantine'] as const;
 ---
 
-<BaseLayout>
+<BaseLayout title={formatDocumentTitle(t['archive.title'], t['brand.name'])} description={t['archive.lead']}>
   <article id="route-root" class="page">
     <p class="page-label">{t['archive.label']}</p>
     <h1>{t['archive.title']}</h1>

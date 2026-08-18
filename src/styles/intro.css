@@ -236,7 +236,7 @@
   margin-bottom: 1rem;
 }
 
-.scr h1 {
+.scr .intro-title {
   font-family: var(--elegant);
   font-weight: 500;
   font-style: italic;
@@ -359,7 +359,7 @@ body.shell-mode .tool-menu {
 .app-shell {
   position: fixed;
   inset: 0;
-  display: flex;
+  display: none;
   flex-direction: column;
   z-index: 3;
 }
@@ -592,6 +592,55 @@ body.shell-mode .app-footer {
   .intro-sub {
     max-width: 100%;
     box-sizing: border-box;
+  }
+}
+
+@media (max-width: 430px) {
+  #intro-stage {
+    overflow-x: hidden;
+  }
+
+  #intro-stage #intro.show {
+    padding: 0.85rem 0.9rem 1.1rem;
+    gap: 0.7rem;
+  }
+
+  .intro-content {
+    padding: 0.95rem 1rem;
+  }
+
+  .scr .intro-title {
+    font-size: clamp(1.55rem, 8vw, 2.05rem);
+    max-width: none;
+    margin-bottom: 0.65rem;
+  }
+
+  .intro-sub {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding-left: 0.75rem;
+  }
+
+  .coords {
+    font-size: 0.88rem;
+    padding: 0.7rem 0.85rem;
+  }
+
+  .enter {
+    max-width: 100%;
+    width: auto;
+    box-sizing: border-box;
+    white-space: normal;
+    justify-content: center;
+  }
+
+  .icv-skip {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  .icv-stage {
+    width: min(var(--lw), calc(100vw - 2rem));
   }
 }
 

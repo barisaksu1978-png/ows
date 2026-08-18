@@ -4,19 +4,30 @@ import '../styles/intro.css';
 import '../styles/pages.css';
 import Header from '../components/shell/Header.astro';
 import Footer from '../components/shell/Footer.astro';
+import IntroCurtain from '../components/intro/IntroCurtain.astro';
 import { getUi, LOCALES, type Locale } from '../i18n';
-import { getLocaleSwitchUrl } from '../i18n/routes';
+import {
+  absolutePageUrl,
+  getLocaleSwitchUrl,
+  withTrailingSlash,
+} from '../i18n/routes';
 
 interface Props {
   title?: string;
   description?: string;
+  hreflangLocales?: Locale[];
+  withIntro?: boolean;
 }
 
-const locale = Astro.currentLocale ?? 'tr';
+const locale = (Astro.currentLocale ?? 'tr') as Locale;
 const t = getUi(locale);
 const title = Astro.props.title ?? t['meta.title'];
 const description = Astro.props.description ?? t['meta.description'];
-const origin = Astro.url.origin;
+const hreflangLocales = Astro.props.hreflangLocales ?? LOCALES;
+const withIntro = Astro.props.withIntro === true;
+const siteOrigin = Astro.site?.origin ?? 'https://openwarstudies.org';
+const pathname = withTrailingSlash(Astro.url.pathname);
+const canonicalHref = absolutePageUrl(pathname, siteOrigin);
 ---
 
 <!doctype html>
@@ -56,20 +67,70 @@ const origin = Astro.url.origin;
     <link rel="icon" href="/favicon.ico" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalHref} />
     {
-      LOCALES.map((loc) => (
+      hreflangLocales.map((loc) => (
         <link
           rel="alternate"
           hreflang={loc}
-          href={`${origin}${getLocaleSwitchUrl(loc as Locale, Astro.url.pathname)}`}
+          href={absolutePageUrl(getLocaleSwitchUrl(loc, pathname), siteOrigin)}
         />
       ))
     }
-    <link rel="alternate" hreflang="x-default" href={`${origin}${getLocaleSwitchUrl('tr', Astro.url.pathname)}`} />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={absolutePageUrl(getLocaleSwitchUrl('tr', pathname), siteOrigin)}
+    />
+    {
+      withIntro && (
+        <script is:inline>
+          (function () {
+            try {
+              if (sessionStorage.getItem('ows_intro') === '1') {
+                document.documentElement.classList.add('ows-entered');
+              }
+            } catch (e) {}
+          })();
+        </script>
+      )
+    }
+    {
+      withIntro && (
+        <noscript>
+          <style>
+            #intro-curtain,
+            #intro-stage {
+              display: none !important;
+              visibility: hidden !important;
+              pointer-events: none !important;
+            }
+            .app-shell,
+            .app-header,
+            .app-footer {
+              display: flex !important;
+            }
+          </style>
+        </noscript>
+      )
+    }
   </head>
-  <body class="app-ready shell-mode">
+  <body class={withIntro ? undefined : 'app-ready shell-mode'}>
+    {
+      withIntro && (
+        <script is:inline>
+          (function () {
+            try {
+              if (sessionStorage.getItem('ows_intro') !== '1') return;
+              document.body.classList.add('app-ready', 'shell-mode');
+            } catch (e) {}
+          })();
+        </script>
+      )
+    }
+    {withIntro && <IntroCurtain t={t} />}
     <div class="app-shell">
-      <Header t={t} locale={locale} />
+      <Header t={t} locale={locale} availableLocales={hreflangLocales} />
       <main class="app-main">
         <slot />
       </main>

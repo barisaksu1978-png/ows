@@ -1,12 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getUi } from '../../i18n';
+import { formatDocumentTitle, getUi } from '../../i18n';
 
 const t = getUi(Astro.currentLocale ?? 'tr');
 const cards = ['roles', 'not_oracle', 'trace'] as const;
 ---
 
-<BaseLayout>
+<BaseLayout title={formatDocumentTitle(t['human_ai.title'], t['brand.name'])} description={t['human_ai.lead']}>
   <article id="route-root" class="page">
     <p class="page-label">{t['human_ai.label']}</p>
     <h1>{t['human_ai.title']}</h1>

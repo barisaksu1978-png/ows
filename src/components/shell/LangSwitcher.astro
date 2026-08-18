@@ -4,9 +4,11 @@ import { getLocaleSwitchUrl } from '../../i18n/routes';
 
 interface Props {
   locale: string;
+  availableLocales?: Locale[];
 }
 
-const { locale } = Astro.props;
+const { locale, availableLocales } = Astro.props;
+const menuLocales = availableLocales?.length ? availableLocales : LOCALES;
 const names: Record<Locale, string> = {
   tr: 'Türkçe',
   en: 'English',
@@ -31,7 +33,7 @@ const current = locale as Locale;
   </button>
   <div class="tool-menu__panel" role="menu" aria-label="Language">
     {
-      LOCALES.map((loc) => (
+      menuLocales.map((loc) => (
         <a
           class:list={['tool-menu__item', { on: loc === current }]}
           href={getLocaleSwitchUrl(loc, pathname)}

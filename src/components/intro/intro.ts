@@ -8,17 +8,36 @@ function hasEntered(): boolean {
   }
 }
 
-function enterApp(): void {
+function focusThreshold(): void {
+  const heading = document.querySelector<HTMLElement>('#route-root h1');
+  if (!heading) return;
+  heading.setAttribute('tabindex', '-1');
+  heading.focus();
+}
+
+function enterApp(moveFocus = false): void {
   try {
     sessionStorage.setItem(STORAGE_INTRO, '1');
   } catch {
     /* ignore */
   }
   const stage = document.getElementById('intro-stage');
-  if (stage) stage.classList.add('hidden');
+  if (stage) {
+    stage.classList.add('hidden');
+    stage.setAttribute('aria-hidden', 'true');
+  }
   const curtain = document.getElementById('intro-curtain');
-  if (curtain) curtain.classList.add('done');
+  if (curtain) {
+    curtain.classList.add('done');
+    curtain.setAttribute('aria-hidden', 'true');
+  }
   document.body.classList.add('app-ready', 'shell-mode');
+  document.documentElement.classList.add('ows-entered');
+  if (moveFocus) focusThreshold();
+}
+
+function focusEnterButton(): void {
+  document.getElementById('intro-enter')?.focus();
 }
 
 function initCurtain(): void {
@@ -46,6 +65,7 @@ function initCurtain(): void {
     t1 = setTimeout(startExit, EXIT_AT);
     t2 = setTimeout(() => {
       intro!.classList.add('done');
+      focusEnterButton();
     }, EXIT_AT + DUR);
   }
 
@@ -55,6 +75,7 @@ function initCurtain(): void {
     startExit();
     setTimeout(() => {
       intro!.classList.add('done');
+      focusEnterButton();
     }, DUR);
   }
 
@@ -71,6 +92,7 @@ function initCurtain(): void {
   if (reduce) {
     document.documentElement.classList.add('reduced-motion');
     intro.classList.add('done');
+    focusEnterButton();
     return;
   }
 
@@ -79,7 +101,14 @@ function initCurtain(): void {
 
 function initIntroScreen(): void {
   const btn = document.getElementById('intro-enter');
-  btn?.addEventListener('click', enterApp);
+  if (!btn) return;
+  btn.addEventListener('click', () => enterApp(true));
+  btn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      enterApp(true);
+    }
+  });
 }
 
 function bootstrap(): void {
@@ -87,7 +116,7 @@ function bootstrap(): void {
   if (!document.getElementById('intro-curtain')) return;
 
   if (hasEntered()) {
-    enterApp();
+    enterApp(false);
     return;
   }
 

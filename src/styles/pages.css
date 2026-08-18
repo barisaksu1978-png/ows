@@ -390,7 +390,7 @@ body.shell-mode #route-root {
   margin: 0;
 }
 
-.home-manset__body h1 {
+.home-manset__body h2 {
   font-family: var(--ui);
   font-weight: 700;
   font-size: clamp(1.55rem, 3.2vw, 2.35rem);
@@ -537,7 +537,7 @@ body.shell-mode #route-root {
     padding: 1.4rem 1.35rem 1.75rem;
   }
 
-  .home-manset__body h1 {
+  .home-manset__body h2 {
     max-width: none;
   }
 }

@@ -28,3 +28,22 @@ export function localePath(locale: Locale, path = ''): string {
   const suffix = path.startsWith('/') ? path : path ? `/${path}` : '';
   return `${base}${suffix}` || '/';
 }
+
+const DEFAULT_BRAND = 'Open War Studies';
+
+/** Document title: `{page name} · Open War Studies`, without doubling the brand. */
+export function formatDocumentTitle(
+  pageName: string,
+  brand: string = DEFAULT_BRAND,
+): string {
+  const name = pageName.trim();
+  const b = brand.trim();
+  if (!name || name === b) return b;
+  if (name.endsWith(` · ${b}`)) return name;
+  return `${name} · ${b}`;
+}
+
+/** Drop a leading hub index (`06 · `) from a nav label. For document titles only. */
+export function stripHubIndexPrefix(label: string): string {
+  return label.replace(/^\d+\s*·\s*/, '').trim();
+}
