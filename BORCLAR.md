@@ -23,13 +23,13 @@ Kayıt tarihi: 2026-08-16 (Aşama 1 kapanış defteri).
 |---|---|
 | Kimlik | OWS-BORC-001 |
 | Tür | Çeviri |
-| Durum | AÇIK |
-| Öncelik | YAYIN SONRASI / PLANLI |
+| Durum | KAPANDI |
+| Öncelik | TAMAMLANDI |
 | Kayıt tarihi | 2026-08-16 |
 | Onay sahibi | Barış Mustafa Aksu |
-| Son inceleme | 2026-08-16 |
+| Son inceleme | 2026-08-18 |
 
-**Ertelenen iş.** Aşağıdaki dört çeviri dosyasının yazılması ve yayımlanması:
+**Kapanan iş.** Aşağıdaki dört çeviri dosyasının yazılması ve yayımlanması:
 
 - `src/content/dossiers/abd-dis-politikasi/uk.md`
 - `src/content/dossiers/abd-dis-politikasi/el.md`
@@ -38,21 +38,30 @@ Kayıt tarihi: 2026-08-16 (Aşama 1 kapanış defteri).
 
 **Erteleme nedeni.** Beş dilde çalışma yükü ve yorgunluk nedeniyle bilinçli erteleme.
 
-**Mevcut geçici durum.** UK/EL rotaları üretilmiyor; TR gövdesi yanlış dil etiketiyle sunulmuyor. Dört rota 404. Site içi bağlantı sayısı sıfır. Hreflang, sitemap ve dil menüsü yalnız TR/EN/RU. Bu borç tek başına deploy engeli değildir; eksik UK/EL içerikleri güvenli biçimde yayımdan çıkarılmıştır ve çeviriler sonraki aşamada tamamlanacaktır.
+**Kapanış durumu (2026-08-18).** Dört UK/EL çeviri dosyası eklendi; build yeniden 140 sayfa üretiyor ve dil menüsü, hreflang ile sitemap beş dili kapsıyor. Aşağıdaki dört canlı rota doğrudan HTTP 200 döndürüyor:
+
+- `https://openwarstudies.org/uk/dossiers/abd-dis-politikasi/`
+- `https://openwarstudies.org/el/dossiers/abd-dis-politikasi/`
+- `https://openwarstudies.org/uk/dossiers/abd-dis-politikasi-popular/`
+- `https://openwarstudies.org/el/dossiers/abd-dis-politikasi-popular/`
 
 **Kapanma koşulları.**
 
-- Dört gerçek çeviri dosyasının eklenmesi
-- İsim, tarih, sayı, olumsuzluk, epistemik etiket ve bağlantı QC’si
-- Ham makine çevirisinin kabul edilmemesi
-- Build’in 140 sayfaya dönmesi
-- Hreflang, sitemap ve dil menüsünün 5/5 doğrulanması
-- İkinci AI denetimi ve Barış Mustafa Aksu onayı
+- [x] Dört gerçek çeviri dosyasının eklenmesi
+- [x] İsim, tarih, sayı, olumsuzluk, epistemik etiket ve bağlantı QC’si
+- [x] Ham makine çevirisinin kabul edilmemesi
+- [x] Build’in 140 sayfaya dönmesi
+- [x] Hreflang, sitemap ve dil menüsünün 5/5 doğrulanması
+- [x] İkinci AI denetimi ve Barış Mustafa Aksu onayı
 
 **İlgili commit / kanıt.**
 
 - `59cc687488fa7e433f216bbd05fb08671151d0bc` — `fix(i18n): stop publishing untranslated locale fallbacks`
 - `2c0351aa3901f42173ed6c58de6b439a44c43ef4` — `fix(i18n): align locale navigation and clean title labels`
+- `618984c65a5e6d7bf18ce0f9ef96b9f9f3bf9d1f` — UK forensic çevirisi
+- `aaa784601e27d4dbb230a8c419eab0ae8bce9283` — EL forensic çevirisi
+- `3a20ab15c3813b6382fa8ace32764e57a0e9a89c` — UK popular çevirisi
+- `4299661e16e028e19b4af9491df357fd8347f38d` — EL popular çevirisi
 
 ---
 
@@ -137,7 +146,7 @@ Kayıt tarihi: 2026-08-16 (Aşama 1 kapanış defteri).
 | Öncelik | DEPLOY BLOCKER |
 | Kayıt tarihi | 2026-08-16 |
 | Onay sahibi | Barış Mustafa Aksu |
-| Son inceleme | 2026-08-16 |
+| Son inceleme | 2026-08-18 |
 
 **Ertelenen iş.** Kaynakta görsel karar intro + eşik olarak alındı; Netlify yayın zincirinin panelden doğrulanması, deploy ve canlı kontrol hâlâ açık.
 
@@ -146,9 +155,10 @@ Kayıt tarihi: 2026-08-16 (Aşama 1 kapanış defteri).
 **Mevcut geçici durum.**
 
 - Görsel karar: intro + eşik. Manset/slider ana sayfadan çıkarıldı; bileşen ve varlıklar silinmedi ve bu turda başka bir rotaya taşınmadı.
-- Canlı site hâlâ önceki yayın paketini sunuyor olabilir; kaynak ile canlı eşleşmesi deploy sonrası kontrol edilecektir.
-- Netlify deploy kaynağı ve yöntemi panelden kesinleştirilmemiştir.
-- Bu dalda remote, push ve deploy yoktur.
+- Canlı sitede intro + eşik görünümü ve dört UK/EL rota 2026-08-18 tarihinde doğrulandı.
+- GitHub remote `origin` (`https://github.com/barisaksu1978-png/ows.git`) mevcuttur; `main`, `seo/phase-1-foundation`, `seo/phase-1-5-intro` ve `translation/ows-004-uk-el` dalları push edilmiştir.
+- Netlify henüz GitHub deposuna bağlı değildir; GitHub tabanlı otomatik deploy yapılandırılmamıştır. Mevcut canlı yayın bu bağlantının kurulduğu anlamına gelmez.
+- Netlify deploy kaynağı ve yöntemi panelde ayrıca kesinleştirilmeli ve yazılı geri dönüş planıyla belgelenmelidir.
 
 **Kapanma koşulları.**
 

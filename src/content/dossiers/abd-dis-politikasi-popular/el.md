@@ -1,11 +1,11 @@
-﻿---
+---
 code: OWS-2026-004
 status: locked
 version: '1.0'
 evidenceLevel: mixed
 riskLevel: medium
 redTeamStatus: 'Παράγωγη καταχώριση· η κεντρική θέση παραμένει αμετάβλητη, δεν προστέθηκαν νέοι ισχυρισμοί'
-updated: 2026-06-28
+updated: 2026-08-18
 relatedMaps: []
 relatedSources: []
 image: abd-cover-declaration.webp

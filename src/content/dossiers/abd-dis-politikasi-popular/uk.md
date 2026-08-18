@@ -1,11 +1,11 @@
-﻿---
+---
 code: OWS-2026-004
 status: locked
 version: '1.0'
 evidenceLevel: mixed
 riskLevel: medium
 redTeamStatus: 'Похідний запис; центральна теза незмінна, нових тверджень не додано'
-updated: 2026-06-28
+updated: 2026-08-18
 relatedMaps: []
 relatedSources: []
 image: abd-cover-declaration.webp

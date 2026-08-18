@@ -1,11 +1,11 @@
-﻿---
+---
 code: OWS-2026-004
 status: locked
 version: '1.0'
 evidenceLevel: mixed
 riskLevel: medium
 redTeamStatus: 'Мульти-AI red-team + аудит епістемічних міток (FORENSIC_MASTER v2.4)'
-updated: 2026-06-28
+updated: 2026-08-18
 relatedMaps: []
 relatedSources: []
 image: abd-cover-declaration.webp
@@ -779,5 +779,3 @@ Rebecca M. Nelson та ін., "Russia's War on Ukraine: Financial and Trade Sanc
 **Метод (додаткові прецеденти):** Wolfgang Streeck & Kathleen Thelen (eds.), *Beyond Continuity*, Oxford University Press, 2005. [Oxford Academic](https://academic.oup.com/book/54803/chapter-abstract/422691509) · Orfeo Fioretos, "Historical Institutionalism in International Relations," *International Organization* 65(2), 2011. [Cambridge Core](https://doi.org/10.1017/S0020818311000002) · David Collier, "Understanding Process Tracing," *PS: Political Science & Politics* 44(4), 2011. [Berkeley PDF](https://polisci.berkeley.edu/sites/default/files/people/u3827/Understanding%20Process%20Tracing.pdf) · (найближчі родичі епістемічного маркування: Sherman Kent, "Words of Estimative Probability"; ODNI ICD 203; епістемічне маркування на рівні речення, ACL Anthology W09-3742.)
 
 **Фінансова архітектура (додаткове/контр-читання):** Benn Steil, *The Battle of Bretton Woods*, Princeton University Press, 2013. [De Gruyter/PUP](https://www.degruyterbrill.com/document/doi/10.1515/9781400846573/html) · Eric Helleiner, *Forgotten Foundations of Bretton Woods*, Cornell University Press, 2014. [Oxford Academic](https://academic.oup.com/ia/article/91/4/893/2326934) · Christoffer J. P. Zoeller, "Closing the Gold Window…," *Politics & Society* 47(1), 2019. [NSF/PAR PDF](https://par.nsf.gov/servlets/purl/10131099) · Douglas A. Irwin, "The Nixon Shock After Forty Years," NBER WP 17749, 2012. [NBER](https://www.nber.org/system/files/working_papers/w17749/w17749.pdf) · Duccio Basosi, "Oil, dollars, and US power in the 1970s," *Journal of Energy History*, 2020. [PDF](https://www.energyhistory.eu/sites/default/files/pdf/10_Oil,%20dollars,%20and%20US%20power%20in%20the%201970s.pdf) · Barry Eichengreen, *Exorbitant Privilege*, Oxford University Press, 2011. [Open Library](https://openlibrary.org/books/OL25064879M/Exorbitant_privilege) · Carla Norrlöf, *America's Global Advantage*, Cambridge University Press, 2010 [Cambridge Core](https://www.cambridge.org/core/books/americas-global-advantage/29F591B11AD3CCFDA25F7ED7D9191B55); і "Dollar hegemony: A power analysis," *RIPE* 21(5), 2014. [Taylor & Francis](https://www.tandfonline.com/doi/abs/10.1080/09692290.2014.895773) · Jonathan Kirshner, *Currency and Coercion*, Princeton University Press, 1995. [ETH Zurich CSS](https://css.ethz.ch/en/services/digital-library/articles/article.html/177476) · NBER Digest, "The Geopolitics of International Currency Choice," 2018. [NBER](https://www.nber.org/digest/apr18/geopolitics-international-currency-choice) · Sandra Kollen Ghizoni, "Creation of the Bretton Woods System" і "Nixon Ends Convertibility…," Federal Reserve History. [Bretton Woods](https://www.federalreservehistory.org/essays/bretton-woods-created); [Gold convertibility ends](https://www.federalreservehistory.org/essays/gold-convertibility-ends)
-
-
